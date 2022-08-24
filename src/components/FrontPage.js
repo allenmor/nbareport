@@ -1,9 +1,9 @@
 import React from 'react'
 
-function Allen() {
+function FrontPage() {
   return (
     <div>Allen</div>
   )
 }
 
-export default Allen;
+export default FrontPage;
