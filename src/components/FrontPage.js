@@ -2,7 +2,7 @@ import React from 'react'
 
 function FrontPage() {
   return (
-    <div>Allen</div>
+    <div>Allen Live</div>
   )
 }
 
