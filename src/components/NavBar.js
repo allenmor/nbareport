@@ -8,6 +8,7 @@ function NavBar() {
       <Link className="active" to="/">Home</Link>
       <Link to="/stadiums">Stadiums</Link>
       <Link to="/players">Players</Link>
+      <p className="allen">Allen Mordukhaev</p>
     </div>
   );
 }

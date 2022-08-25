@@ -1,0 +1,35 @@
+.stadiumContainer {
+  margin: 5rem auto;
+  width: 95vw;
+
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.eachStadium {
+  display: flex;
+  flex-direction: column;
+
+  margin: 0.1rem;
+}
+.card{
+    width: 38vh; 
+}
+.img-wrap{
+    width: 95%;
+    height: 15rem;
+
+}
+.stadiumImage {
+object-fit: cover;
+
+height: 100%;
+  margin: 0.5em;
+}
+.stadiumInfo {
+  display: flex;
+  align-items: center;
+  font-family: sans-serif;
+  justify-content: space-around;
+}

@@ -1,8 +1,11 @@
 import React from 'react'
+import ConferenceTableContainer from './ConferenceTableContainer';
 
-function FrontPage() {
+function FrontPage({teams}) {
   return (
-    <div>Allen Live</div>
+    <div>
+      <ConferenceTableContainer teams={teams}/>
+    </div>
   )
 }
 
