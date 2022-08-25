@@ -14,7 +14,6 @@ function ConferenceTableContainer({ teams }) {
     return el.cid == 1;
   });
 
-  console.log(eastern)
 
   function handleClick() {
     setClicked((prev) => !prev);
