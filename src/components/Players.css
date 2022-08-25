@@ -111,8 +111,8 @@ table {
   
   }
   .playerImg{
-
-      width: 1rem;
+      display: flex;
+      width: 4rem;
   }
   .buttons {
       display: flex;
