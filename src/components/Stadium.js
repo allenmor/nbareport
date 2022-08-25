@@ -1,12 +1,18 @@
 import React from 'react'
 import './Stadiums.css'
+import { useState } from 'react'
 
 function Stadium({stadium}) {
+    const[clicked, setClicked] = useState(true)
+
+    function handleClick(){
+        setClicked(prev => !prev)
+    }
   return (
-    <div className='eachStadium'>
+    <div onClick={handleClick} className='eachStadium'>
         <div className="card">
       <div className="img-wrap">
-      <img className='stadiumImage' src={stadium.imageOut}/>
+      <img className='stadiumImage' src={clicked ? stadium.imageOut : stadium.imageIn}/>
 
       </div>
       
