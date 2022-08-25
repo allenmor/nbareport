@@ -2,17 +2,17 @@ import React from "react";
 import "./Players.css";
 import { useState, useEffect } from 'react'
 
-function PlayerCard({ player, teams }) {
+function PlayerCard({ player }) {
   const [curSeason, setCurSeason] =  useState(player.stats[0].season)
   const [curPlayerStat, setCurPlayerStat] = useState(player.stats[0])
 
-
+  useEffect(() => {
+    setCurPlayerStat(player.stats[0])
+  },[player])
 
 let playerArray = Object.keys(player.stats).map((key) => [Number(key), player.stats[key]])
 
 // Get Which season compared to selection
-
-
 
 //SEASON DROP DOWN MENU NEXT TO EACH PLAYER
 let seasonSelect = playerArray.map((el, i) => {
@@ -43,7 +43,7 @@ setCurPlayerStat(filterSeason[0][1])
     curPlayerStat.teamName[0].name,
   ];
   let [points, gamesPlayed, rebounds,] = [
-    (player.stats[0].pts / player.stats[0].gp).toFixed(1),
+    (curPlayerStat.pts / curPlayerStat.gp).toFixed(1),
     curPlayerStat.gp,
     ((curPlayerStat.orb + curPlayerStat.orb) / curPlayerStat.gp).toFixed(
       1

@@ -6,6 +6,8 @@ import { useState } from 'react'
 function Players({ players, teams }) {
 
   const[arrayNum, setArrayNum] = useState(0)
+  const [curPlayerStat, setCurPlayerStat] = useState([])
+
   // filter players that return a name
 
   let newArray = players.filter((el, i) => {
@@ -72,8 +74,8 @@ function Players({ players, teams }) {
           </tr>
         </thead>
         <tbody>
-          {updatedStats.slice(arrayNum, arrayNum + 20).map((player, i) => {
-            return <PlayerCard key={i} teams={teams} player={player} />;
+          {updatedStats.slice(arrayNum, arrayNum + 20).map((el, i) => {
+            return <PlayerCard key={i} player={el} />;
           })}
         </tbody>
       </table>
