@@ -1,13 +1,11 @@
 import React from "react";
-import PlayerCard from "./PlayerCard";
-import "./Players.css";
-import { useState } from 'react'
+import StatCard from "./StatCard";
+import "./Stats.css";
+import { useState } from "react";
 
-function Players({ players, teams }) {
-
-  const[arrayNum, setArrayNum] = useState(0)
-  const [curPlayerStat, setCurPlayerStat] = useState([])
-
+function Stats({ players, teams }) {
+  const [arrayNum, setArrayNum] = useState(0);
+  const [search, setSearch] = useState('')
   // filter players that return a name
 
   let newArray = players.filter((el, i) => {
@@ -45,20 +43,35 @@ function Players({ players, teams }) {
   updatedStats.length = 640;
 
   //Filter table will show last 20 players
-  function handleBackClick(){
-    arrayNum - 20 < 0 ? console.log('cant go negative') : setArrayNum(prev => prev - 20)
+  function handleBackClick() {
+    arrayNum - 20 < 0
+      ? console.log("cant go negative")
+      : setArrayNum((prev) => prev - 20);
   }
-  function handleFrontClick(){
-    arrayNum + 20 >= updatedStats.length ? setArrayNum(0) : setArrayNum(prev => prev + 20)
+  function handleFrontClick() {
+    arrayNum + 20 >= updatedStats.length
+      ? setArrayNum(0)
+      : setArrayNum((prev) => prev + 20);
   }
+
+  //WHEN YOU CLICK ON POINTS SORTS ARRAY BY HIGHEST POINTS FIRST
+
   return (
     <div className="players">
       <div className="buttons">
-        <button onClick={handleBackClick} className="backBtn">back</button>
-        <button onClick={handleFrontClick} className="nextBtn">next</button>
+        <button
+          style={{ display: arrayNum <= 0 ? "none" : "block" }}
+          onClick={handleBackClick}
+          className="backBtn"
+        >
+          back
+        </button>
+        <button onClick={handleFrontClick} className="nextBtn">
+          next
+        </button>
       </div>
       <table>
-      <caption>All Player Stats</caption>
+        <caption>All Player Stats</caption>
         <thead>
           <tr>
             <th scope="col">Season</th>
@@ -75,7 +88,7 @@ function Players({ players, teams }) {
         </thead>
         <tbody>
           {updatedStats.slice(arrayNum, arrayNum + 20).map((el, i) => {
-            return <PlayerCard key={i} player={el} />;
+            return <StatCard key={i} player={el} />;
           })}
         </tbody>
       </table>
@@ -83,4 +96,4 @@ function Players({ players, teams }) {
   );
 }
 
-export default Players;
+export default Stats;

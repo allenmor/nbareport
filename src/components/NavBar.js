@@ -7,7 +7,7 @@ function NavBar() {
     <div className="topnav" id="myTopnav">
       <Link className="active" to="/">Home</Link>
       <Link to="/stadiums">Stadiums</Link>
-      <Link to="/players">Players</Link>
+      <Link to="/stats">Stats</Link>
       <p className="allen">Allen Mordukhaev</p>
     </div>
   );
