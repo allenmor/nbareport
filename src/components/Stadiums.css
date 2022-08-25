@@ -33,3 +33,7 @@ height: 100%;
   font-family: sans-serif;
   justify-content: space-around;
 }
+
+img {
+    width: 100%;
+}

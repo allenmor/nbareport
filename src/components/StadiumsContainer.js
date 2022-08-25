@@ -12,7 +12,6 @@ function StadiumsContainer() {
       fetch('https://raw.githubusercontent.com/allenmor/nbareport/main/db.json')
       .then(res => res.json())
       .then(data => {
-        console.log(data)
         setStadiums(data.stadiums)
       })
     },[])

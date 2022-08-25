@@ -15,7 +15,7 @@ function App() {
     fetch('https://raw.githubusercontent.com/allenmor/nbareport/main/db.json')
     .then(res => res.json())
     .then(data => {
-      console.log('Data is', data)
+
       setTeams(data.data[0].teams)
       setPlayers(data.data[0].players)
     })
@@ -30,7 +30,7 @@ function App() {
     <Routes>
       <Route path="/" element={<FrontPage teams={teams}/>} />
       <Route path="/stadiums" element={<StadiumsContainer />} />
-      <Route path="/players" element={<Players players={players}/>} />
+      <Route path="/players" element={<Players teams={teams} players={players}/>} />
     </Routes>
     </>
   );
