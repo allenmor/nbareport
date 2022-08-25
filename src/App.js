@@ -12,11 +12,12 @@ function App() {
 
   //FETCH GET INFO
   useEffect(() => {
-    fetch('http://localhost:3000/data')
+    fetch('https://raw.githubusercontent.com/allenmor/nbareport/main/db.json')
     .then(res => res.json())
     .then(data => {
-      setTeams(data[0].teams)
-      setPlayers(data[0].players)
+      console.log('Data is', data)
+      setTeams(data.data[0].teams)
+      setPlayers(data.data[0].players)
     })
   },[])
 

@@ -9,10 +9,11 @@ function StadiumsContainer() {
 
     //FETCH GET INFO
     useEffect(() => {
-      fetch('http://localhost:3000/stadiums')
+      fetch('https://raw.githubusercontent.com/allenmor/nbareport/main/db.json')
       .then(res => res.json())
       .then(data => {
-        setStadiums(data)
+        console.log(data)
+        setStadiums(data.stadiums)
       })
     },[])
 
