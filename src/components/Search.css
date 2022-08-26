@@ -326,5 +326,10 @@ table {
   .playerPic {
 	  margin-top: 2.1vh;
   }
+
+  .searchForm {
+    display: flex;
+    justify-content: center;
+  }
   
   

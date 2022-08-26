@@ -8,7 +8,7 @@ function SearchForPlayerCard({stats}) {
         setstat(stats[Object.keys(stats)[0]])
     },[stats])
 
-    console.log(stat)
+
 
   return (
     <tr>

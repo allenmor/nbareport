@@ -5,8 +5,10 @@ import "./Search.css";
 
 function SearchForPlayer({ players, teams }) {
   const [search, setsSearch] = useState("");
+
   const [playerStats, setPlayerStats] = useState([]);
-  const [nameImg, setNameImg] = useState([])
+  let initialName = {name: 'Name:', pos: 'Position', imgURL: 'https://andscape.com/wp-content/uploads/2017/06/nbalogo.jpg?w=1400'}
+  const [nameImg, setNameImg] = useState(initialName)
 
   function handleSubmit(e) {
     e.preventDefault();
@@ -47,9 +49,10 @@ function SearchForPlayer({ players, teams }) {
     let player = updatedStats.filter((el, i) => {
       return el.name.toLowerCase() === search.toLowerCase();
     });
-    setPlayerStats(Object.entries(player[0].stats).map((e) => ( { [e[0]]: e[1] } )).reverse());
-    setNameImg(player[0]);
-
+    setNameImg(player[0] ? player[0] : {...initialName, name: 'Player', pos: 'Not Available'});
+    setPlayerStats(player[0] ? Object.entries(player[0].stats).map((e) => ( { [e[0]]: e[1] } )).reverse() : 
+      []);
+    console.log(player)
     setsSearch("");
     
   }
@@ -64,7 +67,7 @@ function SearchForPlayer({ players, teams }) {
   return (
     <div className="searchDiv">
       <section className="webdesigntuts-workshop">
-        <form onSubmit={handleSubmit} action="" method="">
+        <form className="searchForm" onSubmit={handleSubmit}>
           <input
             onChange={handleChange}
             value={search}
@@ -78,16 +81,12 @@ function SearchForPlayer({ players, teams }) {
         <div className="card">
           <img
           className="playerPic"
-            src={
-              nameImg.imgURL
-                ? nameImg.imgURL
-                : "https://andscape.com/wp-content/uploads/2017/06/nbalogo.jpg?w=1400"
-            }
+            src={nameImg.imgURL}
             alt={nameImg.name}
           ></img>
           <div className="playerDescription">
-            <h3>{nameImg.name ? nameImg.name : "Name:"}</h3>
-            <p>{nameImg.pos ? nameImg.pos : "Position:"}</p>
+            <h3>{nameImg.name}</h3>
+            <p>{nameImg.pos}</p>
           </div>
         </div>
       </div>
