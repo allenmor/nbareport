@@ -4,6 +4,7 @@ import { Route, Routes } from "react-router-dom";
 import StadiumsContainer from "./components/StadiumsContainer";
 import Stats from "./components/Stats";
 import NavBar from "./components/NavBar";
+import SearchForPlayer from "./components/SearchForPlayer";
 import { useState, useEffect } from 'react'
 
 function App() {
@@ -31,6 +32,7 @@ function App() {
       <Route path="/" element={<FrontPage teams={teams}/>} />
       <Route path="/stadiums" element={<StadiumsContainer />} />
       <Route path="/stats" element={<Stats teams={teams} players={players}/>} />
+      <Route path="/searchforplayer" element={<SearchForPlayer teams={teams} players={players}/>} />
     </Routes>
     </>
   );

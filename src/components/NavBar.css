@@ -29,5 +29,8 @@
   .allen {
     color: white;
     float: right;
-    margin-right: 10vh;
+    margin-top: 0;
+    margin-bottom: 0;
+    margin-right: 2vh;
+    font-size: 17px;
   }

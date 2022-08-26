@@ -8,6 +8,7 @@ function Stats({ players, teams }) {
   const [search, setSearch] = useState('')
   // filter players that return a name
 
+
   let newArray = players.filter((el, i) => {
     return el.name;
   });
@@ -54,7 +55,8 @@ function Stats({ players, teams }) {
       : setArrayNum((prev) => prev + 20);
   }
 
-  //WHEN YOU CLICK ON POINTS SORTS ARRAY BY HIGHEST POINTS FIRST
+  //WHEN YOU CLICK ON POINTS SORTS ARRAY BY HIGHEST POINTS FIRSTxw
+  
 
   return (
     <div className="players">
