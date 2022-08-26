@@ -46,6 +46,7 @@ function SearchForPlayer({ players, teams }) {
       return el.name.toLowerCase() === search.toLowerCase();
     });
     setFilteredPlayer(player[0]);
+    setsSearch('')
   }
 
   //GET SEARCH VALUE
