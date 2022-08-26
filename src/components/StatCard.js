@@ -49,7 +49,7 @@ function StatCard({ player }) {
   let [points, gamesPlayed, rebounds] = [
     (curPlayerStat.pts / curPlayerStat.gp).toFixed(1),
     curPlayerStat.gp,
-    ((curPlayerStat.orb + curPlayerStat.orb) / curPlayerStat.gp).toFixed(1),
+    ((curPlayerStat.drb + curPlayerStat.orb) / curPlayerStat.gp).toFixed(1),
   ];
   let [assists, fieldGoal] = [
     (curPlayerStat.ast / curPlayerStat.gp).toFixed(1),
