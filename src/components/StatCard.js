@@ -33,7 +33,6 @@ function StatCard({ player }) {
   }
   let filterSeason = playerArray.filter((el, i) => {
    if(el[1].season == curSeason){
-    console.log(el[1].season)
    }
     return el[1].season == curSeason;
   });
