@@ -18,7 +18,7 @@ function Stats({ players, teams }) {
 
   //ADD TEAM NAMES TO EACH PLAYER STAT
   let updatedStats = onlyNbaPlayers.map((player, i) => {
-    return player.stats.map((stat, i) => {
+    return player.stats.reverse().map((stat, i) => {
       return (
         stat.tid ===
         teams.map((el, i) => {
