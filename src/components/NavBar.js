@@ -9,6 +9,7 @@ function NavBar() {
       <Link to="/stadiums">Stadiums</Link>
       <Link to="/stats">Stats</Link>
       <Link to="/searchforplayer">Search</Link>
+      <Link to="/news">News</Link>
       <p className="allen"><a href="https://www.linkedin.com/in/allenmord/">Allen Mordukhaev</a></p>
     </div>
   );

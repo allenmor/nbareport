@@ -5,6 +5,7 @@ import StadiumsContainer from "./components/StadiumsContainer";
 import Stats from "./components/Stats";
 import NavBar from "./components/NavBar";
 import SearchForPlayer from "./components/SearchForPlayer";
+import NewsContainer from "./components/NewsContainer";
 import { useState, useEffect } from 'react'
 
 function App() {
@@ -34,6 +35,7 @@ function App() {
       <Route path="/stadiums" element={<StadiumsContainer />} />
       <Route path="/stats" element={<Stats teams={teams} players={players}/>} />
       <Route path="/searchforplayer" element={<SearchForPlayer teams={teams} players={players}/>} />
+      <Route path="/news" element={<NewsContainer players={players}/>} />
     </Routes>
     </>
   );
