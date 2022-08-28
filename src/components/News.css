@@ -3,7 +3,6 @@ EDIT ON
 .list-type5{
 width:410px;
 margin:0 auto;
-
 }
 .list-type5 ol {
 list-style-type: none;
@@ -12,6 +11,9 @@ margin: 0;
 margin-left: 1em;
 padding: 0;
 counter-reset: li-counter;
+background-color: #5f5e5c;;
+
+
 }
 .list-type5 ol li{
 position: relative;
@@ -19,6 +21,7 @@ margin-bottom: 1.5em;
 padding: 0.5em;
 background-color: #5f5e5c;
 padding-left: 58px;
+
 }
 
 .list-type5 a{
@@ -27,12 +30,14 @@ color:black;
 font-size:15px;
 font-family: 'Raleway', sans-serif;
 color: white;
+font-weight: bold;
 }
 
 .list-type5 li:hover{
 box-shadow:inset -1em 0 #6CD6CC;
 -webkit-transition: box-shadow 0.5s; /* For Safari 3.1 to 6.0 */
 transition: box-shadow 0.5s;
+
 }
 
 .list-type5 ol li:before {
@@ -55,6 +60,15 @@ overflow: hidden;
 content: counter(li-counter);
 counter-increment: li-counter;
 }
+.sourceName {
+     border-bottom: 
+     1px dashed #000; 
+     width: 80%; margin: 
+     auto; margin-top: 5%; 
+     margin-bottom: 5%; 
+}
+
+
 
 
 
