@@ -47,7 +47,7 @@ function SearchForPlayer({ players, teams }) {
     });
     //GET PLAYER OBJECT THAT IS TYPED IN THE SEARCH
     let player = updatedStats.filter((el, i) => {
-      return el.name.toLowerCase() === search.toLowerCase();
+      return el.name.toLowerCase() === search.toLowerCase().trim();
     });
     setNameImg(player[0] ? player[0] : {...initialName, name: 'Player', pos: 'Not Available'});
     setPlayerStats(player[0] ? Object.entries(player[0].stats).map((e) => ( { [e[0]]: e[1] } )).reverse() : 
