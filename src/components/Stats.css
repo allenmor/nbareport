@@ -5,6 +5,12 @@ table {
     padding: 0;
     width: 100%;
     table-layout: fixed;
+    position: relative;
+  }
+  th {
+    background: #bcbaba;
+    position: sticky;
+    top: 0;
   }
   
   table caption {

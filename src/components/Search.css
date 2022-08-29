@@ -249,6 +249,12 @@ table {
     padding: 0;
     width: 100%;
     table-layout: fixed;
+    position: relative;
+  }
+  th {
+    background: #f8f8f8;
+    position: sticky;
+    top: 0;
   }
   
   table caption {
