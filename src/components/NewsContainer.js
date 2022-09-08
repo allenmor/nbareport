@@ -12,6 +12,7 @@ function NewsContainer() {
         .then(res => res.json())
         .then(data => {
             setNews(data)
+            
         })
     },[])
   return (

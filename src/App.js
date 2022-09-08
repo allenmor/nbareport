@@ -20,6 +20,7 @@ function App() {
 
       setTeams(data.data[0].teams)
       setPlayers(data.data[0].players)
+      console.log(data)
     })
   },[])
 
