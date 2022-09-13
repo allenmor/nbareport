@@ -110,6 +110,7 @@ function SearchForPlayer({ players, teams }) {
           // console.log(e.target[0].value)
         }}>
           <input
+            id="input-box"
             onChange={handleChange}
             value={search}
             type="search"

@@ -58,10 +58,15 @@
 @import url(https://fonts.googleapis.com/css?family=Cabin:400);
 
 .webdesigntuts-workshop {
-	background: #ffffff;
-	position: absolute;
+	/* background: black; */
+	/* position: absolute; */
 	text-align: center;
 	width: 100%;  
+  /* height: 10vh; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
 }
 
 .webdesigntuts-workshop:before,
@@ -87,18 +92,16 @@
 }
 
 .webdesigntuts-workshop form {
-	background: #111;
+	background: black;
 	background: linear-gradient(#1b1b1b, #111);
-	border: 1px solid #000;
+	border: 5px solid #000;
 	border-radius: 5px;
 	box-shadow: inset 0 0 0 1px #272727;
 	display: inline-block;
 	font-size: 0px;
 	margin: 0 auto;
-	padding: 20px;
-	position: relative;
 	z-index: 1;
-    display: flex;
+  margin-top: 3vh;
 }
 
 .webdesigntuts-workshop input {
@@ -326,6 +329,7 @@ table {
     table td:last-child {
       border-bottom: 0;
     }
+    
   }
 
   .playerPic {
@@ -333,32 +337,49 @@ table {
   }
 
   .searchForm {
-    display: flex;
-    justify-content: center;
-    z-index: 1;
   }
 
   .dropDownUl {
-    margin-top: 7vh;
-    height: 30vh;
-    width: 30%;
+    /* margin-top: 7vh; */
+    width: 520px;
+    max-height: 250px;
+    margin-right: 80px;
     z-index: 2;
     color: white;
-    background-color: rgba(128, 128, 128, 0.488);
+    background-color: #303134a3;
     position: absolute;
     list-style-type: none;
-    left:50%;
-    transform: translate(-37.5%);
+    top:13.5%;
+    /* transform: translate(-37.5%); */
     overflow-y: scroll;
+
     min-width: 10vh;
     margin-top: 0;
     text-align: left;
     font-size: 2vh;
-    font-weight: bold;
-  
+    padding: 0;
+    border-radius: 5px;
+    
   }
-
+  .dropDownUl::-webkit-scrollbar{
+    width: 0;
+  }
+  li{
+    width: 100%;
+    padding-left: 5%;
+  }
   li:hover {
-    background-color: black;
+    background-color: #3c4043a9;
     cursor: pointer
+  }
+  @media screen and (max-width: 600px) {
+    .dropDownUl{
+      width: 400px;
+      margin-right: 80px;
+      top: 19.5%;
+      left: 2%;
+    }
+    .webdesigntuts-workshop input{
+      width: 80vw;
+    }
   }
