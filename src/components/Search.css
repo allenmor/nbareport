@@ -349,7 +349,7 @@ table {
     background-color: #303134a3;
     position: absolute;
     list-style-type: none;
-    top:13.5%;
+    top:13.5%; /*  change this value at higher res*/
     /* transform: translate(-37.5%); */
     overflow-y: scroll;
 
@@ -382,4 +382,10 @@ table {
     .webdesigntuts-workshop input{
       width: 80vw;
     }
+  }
+  @media screen and (min-width: 1200px) {
+    .dropDownUl{
+      top: 10%;
+    }
+  
   }
