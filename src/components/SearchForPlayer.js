@@ -5,21 +5,23 @@ import "./Search.css";
 
 function SearchForPlayer({ players, teams }) {
   const [search, setsSearch] = useState("");
-
   const [playerStats, setPlayerStats] = useState([]);
   let initialName = {name: 'Name:', pos: 'Position', imgURL: 'https://andscape.com/wp-content/uploads/2017/06/nbalogo.jpg?w=1400'}
   const [nameImg, setNameImg] = useState(initialName)
+  const [filteredPlayers, setFilteredPlayers] = useState([])
+  const [searchingPlayers, setSearchingPlayers] = useState([])  
 
-  function handleSubmit(e) {
-    e.preventDefault();
+  //now e represents string that is being searched 
+  function handleSubmit() {
+    //e.preventDefault();
 
     let newArray = players.filter((el, i) => {
       return el.name;
     });
+
     let onlyNbaPlayers = newArray.filter((player, i) => {
       return player.stats;
     });
-
     //ADD TEAM NAMES TO EACH PLAYER STAT
     let updatedStats = onlyNbaPlayers.map((player, i) => {
       return player.stats.map((stat, i) => {
@@ -52,22 +54,57 @@ function SearchForPlayer({ players, teams }) {
     setNameImg(player[0] ? player[0] : {...initialName, name: 'Player', pos: 'Not Available'});
     setPlayerStats(player[0] ? Object.entries(player[0].stats).map((e) => ( { [e[0]]: e[1] } )).reverse() : 
       []);
-    console.log(player)
-    setsSearch("");
-    
+    // setsSearch("");
   }
 
 
   //GET SEARCH VALUE
   function handleChange(e) {
-    setsSearch(e.target.value);
+    setsSearch(e.target.value.toLowerCase());
+
+    let newArray = filteredPlayers.filter(el=>el.includes(e.target.value.toLowerCase()))
+    setSearchingPlayers(newArray)
+
   }
+
+
+  useEffect(() => {
+    let newArray = players.filter((el, i) => {
+      return el.name;
+    });
+    let onlyNbaPlayers = newArray.filter((player, i) => {
+      return player.stats;
+    });
+    let names = onlyNbaPlayers.map((el, i) => {
+      return el.name.toLowerCase()
+    })
+    setFilteredPlayers(names)
+
+  },[players])
+
+  
+
+// useEffect(() => )
+
+//DROP DOWN MENU
+  function handleLiClick(e) {
+    setsSearch(e.target.textContent)
+  }
+  useEffect(() => {
+    handleSubmit()
+  }, [search])
+
+  
 
 
   return (
     <div className="searchDiv">
       <section className="webdesigntuts-workshop">
-        <form className="searchForm" onSubmit={handleSubmit}>
+        
+        <form className="searchForm" onSubmit={(e) => {
+          e.preventDefault()
+          handleSubmit()
+        }}>
           <input
             onChange={handleChange}
             value={search}
@@ -76,6 +113,11 @@ function SearchForPlayer({ players, teams }) {
           />
           <button>Search</button>
         </form>
+      <ul style={searchingPlayers.length > 620 ||  searchingPlayers.length == 0? {display: 'none'} : {display: 'block'}} className="dropDownUl">
+        {searchingPlayers.map((el, i) => {
+          return <li key={i} onClick={handleLiClick}>{el}</li>
+        })}
+      </ul>
       </section>
       <div className="playerImg">
         <div className="card">

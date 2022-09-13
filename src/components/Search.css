@@ -61,12 +61,11 @@
 	background: #ffffff;
 	position: absolute;
 	text-align: center;
-	width: 100%;
+	width: 100%;  
 }
 
 .webdesigntuts-workshop:before,
 .webdesigntuts-workshop:after {
-	/* content: ''; */
 	display: block;	
 	height: 1px;
 	left: 50%;
@@ -235,6 +234,7 @@
 .playerImg {
 margin: 0, auto;
 margin-top: 14vh;
+z-index: 1;
 }
 .playerDescription {
     display: flex;
@@ -335,6 +335,30 @@ table {
   .searchForm {
     display: flex;
     justify-content: center;
+    z-index: 1;
   }
+
+  .dropDownUl {
+    margin-top: 7vh;
+    height: 30vh;
+    width: 30%;
+    z-index: 2;
+    color: white;
+    background-color: rgba(128, 128, 128, 0.488);
+    position: absolute;
+    list-style-type: none;
+    left:50%;
+    transform: translate(-37.5%);
+    overflow-y: scroll;
+    min-width: 10vh;
+    margin-top: 0;
+    text-align: left;
+    font-size: 2vh;
+    font-weight: bold;
   
-  
+  }
+
+  li:hover {
+    background-color: black;
+    cursor: pointer
+  }
