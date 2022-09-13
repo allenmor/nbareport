@@ -208,6 +208,7 @@
     border-radius: 0.5rem;
     box-shadow: 0.05rem 0.1rem 0.3rem -0.03rem rgba(0, 0, 0, 0.45);
     padding-bottom: 0.8vh;
+
   }
   
   .card > :last-child {
@@ -236,7 +237,7 @@
   }
 .playerImg {
 margin: 0, auto;
-margin-top: 14vh;
+margin-top: 3vh;
 z-index: 1;
 }
 .playerDescription {
@@ -347,14 +348,13 @@ table {
     z-index: 2;
     color: white;
     background-color: #303134a3;
-    position: absolute;
+    position: flex;
     list-style-type: none;
     top:13.5%; /*  change this value at higher res*/
     /* transform: translate(-37.5%); */
     overflow-y: scroll;
-
-    min-width: 10vh;
     margin-top: 0;
+    min-width: 10vh;
     text-align: left;
     font-size: 2vh;
     padding: 0;
