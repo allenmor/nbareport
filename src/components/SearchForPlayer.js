@@ -12,7 +12,7 @@ function SearchForPlayer({ players, teams }) {
   const [searchingPlayers, setSearchingPlayers] = useState([])  
 
   //now e represents string that is being searched 
-  function handleSubmit() {
+  function handleSubmit(term) {
     //e.preventDefault();
 
     let newArray = players.filter((el, i) => {
@@ -49,12 +49,12 @@ function SearchForPlayer({ players, teams }) {
     });
     //GET PLAYER OBJECT THAT IS TYPED IN THE SEARCH
     let player = updatedStats.filter((el, i) => {
-      return el.name.toLowerCase() === search.toLowerCase().trim();
+      return el.name.toLowerCase() === term.toLowerCase().trim();
     });
     setNameImg(player[0] ? player[0] : {...initialName, name: 'Player', pos: 'Not Available'});
     setPlayerStats(player[0] ? Object.entries(player[0].stats).map((e) => ( { [e[0]]: e[1] } )).reverse() : 
       []);
-    // setsSearch("");
+    setsSearch("");
   }
 
 
@@ -89,10 +89,12 @@ function SearchForPlayer({ players, teams }) {
 //DROP DOWN MENU
   function handleLiClick(e) {
     setsSearch(e.target.textContent)
+    setSearchingPlayers([])
+    handleSubmit(e.target.textContent)
   }
   useEffect(() => {
-    handleSubmit()
-  }, [search])
+   
+  }, [])
 
   
 
@@ -103,7 +105,9 @@ function SearchForPlayer({ players, teams }) {
         
         <form className="searchForm" onSubmit={(e) => {
           e.preventDefault()
-          handleSubmit()
+          handleSubmit(e.target[0].value)
+          setSearchingPlayers([])
+          // console.log(e.target[0].value)
         }}>
           <input
             onChange={handleChange}
@@ -113,7 +117,7 @@ function SearchForPlayer({ players, teams }) {
           />
           <button>Search</button>
         </form>
-      <ul style={searchingPlayers.length > 620 ||  searchingPlayers.length == 0? {display: 'none'} : {display: 'block'}} className="dropDownUl">
+      <ul style={searchingPlayers.length > 620 ||  searchingPlayers.length == 0 ? {display: 'none'} : {display: 'block'}} className="dropDownUl">
         {searchingPlayers.map((el, i) => {
           return <li key={i} onClick={handleLiClick}>{el}</li>
         })}
