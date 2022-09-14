@@ -17,6 +17,7 @@ function StandingsContainer() {
 
   return (
     <div>
+      <script src="https://widgets.sports-reference.com/wg.fcgi?css=1&site=bbr&url=%2Fleagues%2FNBA_2022_standings.html&div=div_expanded_standings"></script>
     </div>
   )
 }
