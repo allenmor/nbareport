@@ -237,8 +237,9 @@
   }
 .playerImg {
 margin: 0, auto;
-margin-top: 3vh;
+margin-top: 9vh;
 z-index: 1;
+position: absolute;
 }
 .playerDescription {
     display: flex;
@@ -404,4 +405,18 @@ table {
       top: 10.4%;
     }
   
+  }
+
+  div.tableDiv {
+    margin-top: 40rem;
+    position: absolute;
+  }
+  .card{
+    display: flex;
+    height: 30rem;
+    flex-direction: column;
+    justify-content: space-around;
+  }
+  .playerPic{
+
   }
