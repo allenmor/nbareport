@@ -340,6 +340,10 @@ table {
   .searchForm {
   }
 
+  .playerList{
+    padding-left: 2rem;
+  }
+
   .dropDownUl {
     /* margin-top: 7vh; */
     width: 520px;

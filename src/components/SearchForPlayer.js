@@ -120,7 +120,7 @@ function SearchForPlayer({ players, teams }) {
         </form>
       <ul style={searchingPlayers.length > 620 ||  searchingPlayers.length == 0 ? {display: 'none'} : {display: 'block'}} className="dropDownUl">
         {searchingPlayers.map((el, i) => {
-          return <li key={i} onClick={handleLiClick}>{el}</li>
+          return <li className = "playerList" key={i} onClick={handleLiClick}>{el}</li>
         })}
       </ul>
       </section>
