@@ -22,10 +22,6 @@ function App() {
       setPlayers(data.data[0].players)
     })
   },[])
-
-
-
-
   return (
     <>
     <NavBar></NavBar>
