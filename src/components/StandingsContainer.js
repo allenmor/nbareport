@@ -13,6 +13,13 @@ function StandingsContainer() {
         console.log(data)
       })
     },[])
+    useEffect(() => {
+      fetch('https://raw.githubusercontent.com/allenmor/nbareport/main/teamStats.json')
+      .then(res => res.json())
+      .then(data => {
+        console.log(data)
+      })
+    },[])
 
 
   return (
