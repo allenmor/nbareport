@@ -5,7 +5,8 @@ import Standing from "./Standing";
 
 function StandingsContainer() {
   const [standings, setStandings] = useState([]);
-  const [clickedW, setClickedW] = useState(false)
+
+  const [clicked, setClicked] = useState(false)
   const [winSort, setWinSort] = useState([])
 
   //FETCH GET INFO
@@ -34,22 +35,32 @@ function StandingsContainer() {
               }
             }
             setStandings(arr);
+
+            console.log(arr)
+            //Toggle Wins
+            let winArr = [...arr]
+            setWinSort(winArr.sort(function(a, b) {
+            }))
+
           });
       });
   }, []);
 
-
-  console.log('standings', standings)
-  function handleClick() {
-
-    // let sorted = standings
-    let newArr = standings.sort(function(a, b) {
-      return +a.Overall.substring(0, 2) - +b.Overall.substring(0, 2)
+//TOGGLE HGHEST AND LOWEST STAT FOR EACH COLUMN
+  function handleClick(category){
+    console.log(category)
+    let newArray = [...standings]
+    setClicked(prev => !prev)
+    
+    clicked ? 
+    newArray.sort((a,b) => {
+      return a.stats[category] - b.stats[category]
+    }) :
+    newArray.sort((a,b) => {
+      return b.stats[category] - a.stats[category]
     })
-    // setWinSort(newArr)
-    setClickedW(prev => !prev)
-    console.log(clickedW)
-    console.log('winsort', winSort)
+
+    setStandings(newArray)
   }
   
 
@@ -64,32 +75,29 @@ function StandingsContainer() {
         <thead className="standingThead">
           <tr className="standingTr">
             <th className="standingTh sticky-col" scope="col">Team</th>
-            <th onClick={handleClick} className="standingTh" scope="col">W</th>
+            <th className="standingTh" scope="col">W</th>
             <th className="standingTh" scope="col">L</th>
             <th className="standingTh" scope="col">Home</th>
             <th className="standingTh" scope="col">Road</th>
-            <th className="standingTh" scope="col">FG%</th>
-            <th className="standingTh" scope="col">3P</th>
-            <th className="standingTh" scope="col">3PA</th>
-            <th className="standingTh" scope="col">3P%</th>
-            <th className="standingTh" scope="col">2P</th>
-            <th className="standingTh" scope="col">2PA</th>
-            <th className="standingTh" scope="col">2P%</th>
-            <th className="standingTh" scope="col">FT%</th>
-            <th className="standingTh" scope="col">ORB</th>
-            <th className="standingTh" scope="col">DRB</th>
-            <th className="standingTh" scope="col">TRB</th>
-            <th className="standingTh" scope="col">AST</th>
-            <th className="standingTh" scope="col">STL</th>
-            <th className="standingTh" scope="col">BLK</th>
-            <th className="standingTh" scope="col">TOV</th>
+            <th onClick={() => handleClick("FG%")}className="standingTh" scope="col">FG%</th>
+            <th onClick={() => handleClick("3P")} className="standingTh" scope="col">3P</th>
+            <th onClick={() => handleClick("3PA")} className="standingTh" scope="col">3PA</th>
+            <th onClick={() => handleClick("3P%")} className="standingTh" scope="col">3P%</th>
+            <th onClick={() => handleClick("2P")} className="standingTh" scope="col">2P</th>
+            <th onClick={() => handleClick("2PA")} className="standingTh" scope="col">2PA</th>
+            <th onClick={() => handleClick("2P%")} className="standingTh" scope="col">2P%</th>
+            <th onClick={() => handleClick("FT%")} className="standingTh" scope="col">FT%</th>
+            <th onClick={() => handleClick("ORB")} className="standingTh" scope="col">ORB</th>
+            <th onClick={() => handleClick("DRB")} className="standingTh" scope="col">DRB</th>
+            <th onClick={() => handleClick("TRB")} className="standingTh" scope="col">TRB</th>
+            <th onClick={() => handleClick("AST")} className="standingTh" scope="col">AST</th>
+            <th onClick={() => handleClick("STL")} className="standingTh" scope="col">STL</th>
+            <th onClick={() => handleClick("BLK")} className="standingTh" scope="col">BLK</th>
+            <th onClick={() => handleClick("TOV")} className="standingTh" scope="col">TOV</th>
           </tr>
         </thead>
         <tbody className="standingTbody">
-      {clickedW ?
-      winSort.map((el, i) => {
-        return <Standing key={i} team={el} />
-      }) :
+      {
        standings.map((el, i) => {
         return <Standing key={i} team={el} />
       })}

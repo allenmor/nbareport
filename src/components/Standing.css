@@ -34,3 +34,6 @@
 .standingTh {
   width: 20em;
 }
+.standingTh {
+  cursor: pointer;
+}
