@@ -28,7 +28,7 @@ function App() {
     <Routes>
       <Route path="/" element={<FrontPage teams={teams}/>} />
       <Route path="/standings" element={<StandingsContainer />} />
-      <Route path="/stats" element={<Stats teams={teams} players={players}/>} />
+      <Route path="/stats" element={<Stats/>} />
       <Route path="/searchforplayer" element={<SearchForPlayer teams={teams} players={players}/>} />
       <Route path="/news" element={<NewsContainer players={players}/>} />
     </Routes>

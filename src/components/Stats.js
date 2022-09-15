@@ -1,100 +1,86 @@
 import React from "react";
 import StatCard from "./StatCard";
 import "./Stats.css";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
-function Stats({ players, teams }) {
-  const [arrayNum, setArrayNum] = useState(0);
-  const [search, setSearch] = useState('')
-  // filter players that return a name
+function Stats() {
 
-
-  let newArray = players.filter((el, i) => {
-    return el.name;
-  });
-  let onlyNbaPlayers = newArray.filter((player, i) => {
-    return player.stats;
-  });
-
-  //ADD TEAM NAMES TO EACH PLAYER STAT
-  let updatedStats = onlyNbaPlayers.map((player, i) => {
-    return player.stats.reverse().map((stat, i) => {
-      return (
-        stat.tid ===
-        teams.map((el, i) => {
-          return el.tid;
-        })
-      );
-    })
-      ? {
-          ...player,
-          stats: {
-            ...player.stats.map((object) => {
-              return {
-                ...object,
-                teamName: teams.filter((el, i) => {
-                  return el.tid === object.tid;
-                }),
-              };
-            }),
-          },
-        }
-      : "no";
-  });
-  updatedStats.length = 640;
-
-  //Filter table will show last 20 players
-  function handleBackClick() {
-    arrayNum - 20 < 0
-      ? console.log("cant go negative")
-      : setArrayNum((prev) => prev - 20);
-  }
-  function handleFrontClick() {
-    arrayNum + 20 >= updatedStats.length
-      ? setArrayNum(0)
-      : setArrayNum((prev) => prev + 20);
-  }
+  const [playerStat, setPlayerStat] = useState([])
+  const [clicked, setClicked] = useState(false)
 
   //WHEN YOU CLICK ON POINTS SORTS ARRAY BY HIGHEST POINTS FIRSTxw
-  
+  useEffect(() => {
+    fetch('https://raw.githubusercontent.com/allenmor/nbareport/main/currentStats.json')
+    .then(res => res.json())
+    .then(data => {
+      setPlayerStat(data)
+    })
+  },[])
 
+//TOGGLE STATS HIGHEST AND LOWEST
+  function handleClick(category){
+    // console.log(standings)
+    let newArray = [...playerStat]
+    setClicked(prev => !prev)
+ 
+    clicked ? 
+    newArray.sort((a,b) => {
+      return a[category] - b[category]
+    }) :
+    newArray.sort((a,b) => {
+      return b[category] - a[category]
+    })
+
+    setPlayerStat(newArray)
+  }
+
+  console.log(playerStat)
   return (
-    <div className="players">
-      <div className="buttons">
-        <button
-          style={{ display: arrayNum <= 0 ? "none" : "block" }}
-          onClick={handleBackClick}
-          className="backBtn"
-        >
-          back
-        </button>
-        <button onClick={handleFrontClick} className="nextBtn">
-          next
-        </button>
-      </div>
+<>
+      <h1 className="teamTitle">Player Per Game Stats</h1>
+      <div className="stat_tableDiv">
       <table className="statsTable">
-        <caption>All Player Stats</caption>
-        <thead className="statsThead">
-          <tr>
-            <th className="statsTh" scope="col">Season</th>
-            <th className="statsTh" scope="col">Name</th>
-            <th className="statsTh" scope="col">Image</th>
-            <th className="statsTh" scope="col">Pos</th>
-            <th className="statsTh" scope="col">Team</th>
-            <th className="statsTh" scope="col">GP</th>
-            <th className="statsTh" scope="col">Points</th>
-            <th className="statsTh" scope="col">Rebounds</th>
-            <th className="statsTh" scope="col">Assists</th>
-            <th className="statsTh" scope="col">FGP</th>
+        <caption>
+          {/* <button onClick={handleClick}>{clicked ? "Eastern Conference" : "Western Conference"}</button> */}
+        </caption>
+        <thead className="statThead">
+          <tr className="statTr">
+            <th className="statTh sticky-col" scope="col">Player</th>
+            <th className="statTh" scope="col">Pos</th>
+            <th className="statTh" scope="col">Tm</th>
+            <th onClick={() => handleClick('Age')} className="statTh" scope="col">Age</th>
+            <th onClick={() => handleClick('PTS')} className="statTh" scope="col">PTS</th>
+            <th onClick={() => handleClick('G')} className="statTh" scope="col">G</th>
+            <th onClick={() => handleClick('GS')} className="statTh" scope="col">GS</th>
+            <th onClick={() => handleClick('MP')} className="statTh" scope="col">MP</th>
+            <th onClick={() => handleClick('FG')} className="statTh" scope="col">FG</th>
+            <th onClick={() => handleClick('FGA')} className="statTh" scope="col">FGA</th>
+            <th onClick={() => handleClick('FG%')} className="statTh" scope="col">FG%</th>
+            <th onClick={() => handleClick('3P')} className="statTh" scope="col">3P</th>
+            <th onClick={() => handleClick('3PA')} className="statTh" scope="col">3PA</th>
+            <th onClick={() => handleClick('3P%')} className="statTh" scope="col">3P%</th>
+            <th onClick={() => handleClick('2P')} className="statTh" scope="col">2P</th>
+            <th onClick={() => handleClick('2PA')} className="statTh" scope="col">2PA</th>
+            <th onClick={() => handleClick('2P%')} className="statTh" scope="col">2P%</th>
+            <th onClick={() => handleClick('FTA')} className="statTh" scope="col">FTA</th>
+            <th onClick={() => handleClick('FT%')} className="statTh" scope="col">FT%</th>
+            <th onClick={() => handleClick('ORB')} className="statTh" scope="col">ORB</th>
+            <th onClick={() => handleClick('DRB')} className="statTh" scope="col">DRB</th>
+            <th onClick={() => handleClick('TRB')} className="statTh" scope="col">TRB</th>
+            <th onClick={() => handleClick('AST')} className="statTh" scope="col">AST</th>
+            <th onClick={() => handleClick('STL')} className="statTh" scope="col">STL</th>
+            <th onClick={() => handleClick('BLK')} className="statTh" scope="col">BLK</th>
+            <th onClick={() => handleClick('TOV')} className="statTh" scope="col">TOV</th>
           </tr>
         </thead>
-        <tbody>
-          {updatedStats.slice(arrayNum, arrayNum + 20).map((el, i) => {
-            return <StatCard key={i} player={el} />;
-          })}
+        <tbody className="statTbody">
+          {playerStat.map((el, i) => {
+            return <StatCard player={el} key={i} />
+          })}        
         </tbody>
       </table>
-    </div>
+      </div>
+    </>
   );
 }
 

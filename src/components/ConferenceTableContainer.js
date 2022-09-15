@@ -19,21 +19,6 @@ function ConferenceTableContainer({ teams }) {
     setClicked((prev) => !prev);
   }
 
-  useEffect(() => {
-
-    fetch('https://basketball.realgm.com/rss/wiretap/0/0.xml', {
-      mode: 'cors',
-      headers: {
-        'Access-Control-Allow-Origin':'*'
-      }
-    })
-      .then(response => response.json())
-      .then(data => {
-        console.log(data)
-      })
-
-  },[])
-
   return (
     <>
       <table className="teamTable">
