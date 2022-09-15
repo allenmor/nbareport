@@ -7,7 +7,6 @@ function Stats() {
 
   const [playerStat, setPlayerStat] = useState([])
   const [clicked, setClicked] = useState(false)
-
   //WHEN YOU CLICK ON POINTS SORTS ARRAY BY HIGHEST POINTS FIRSTxw
   useEffect(() => {
     fetch('https://raw.githubusercontent.com/allenmor/nbareport/main/currentStats.json')

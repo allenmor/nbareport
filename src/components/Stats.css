@@ -30,6 +30,7 @@
 
 .statTd {
   background-color: rgb(32,33,37);
+
 }
 
 .statTd, .statTh {
@@ -38,6 +39,7 @@
 }
 .statTh {
   width: 20em;
+
 }
 .statTh {
   cursor: pointer;

@@ -4,84 +4,91 @@ import { useState, useEffect } from "react";
 
 function StatCard({player}) {
 
+  const [clicked, setClicked] = useState(false)
+
+
+  function handleClick() {
+    setClicked(prev => !prev)
+  }
+
   return (
     <tr className="playerRow statsTr">
-      <td className="statTd sticky-col" data-label="Team Name">
+      <td style={clicked ? { backgroundColor: 'rgb(56,171,214)', color : 'black'} : {color: 'rgb(189,193,197)'}} onClick={() => handleClick()} className="statTd sticky-col" data-label="Team Name">
         {player.Player}
     </td>
-      <td className="statTd sticky-col" data-label="Team Name">
+      <td style={clicked ? { backgroundColor: 'rgb(56,171,214)', color : 'black'} : {color: 'rgb(189,193,197)'}} onClick={() => handleClick()} className="statTd sticky-col" data-label="Team Name">
         {player.Pos}
     </td>
-      <td className="statTd sticky-col" data-label="Team Name">
+      <td style={clicked ? { backgroundColor: 'rgb(56,171,214)', color : 'black'} : {color: 'rgb(189,193,197)'}} onClick={() => handleClick()} className="statTd sticky-col" data-label="Team Name">
         {player.Tm}
     </td>
-      <td className="statTd sticky-col" data-label="Team Name">
+      <td style={clicked ? { backgroundColor: 'rgb(56,171,214)', color : 'black'} : {color: 'rgb(189,193,197)'}} onClick={() => handleClick()} className="statTd sticky-col" data-label="Team Name">
         {player.Age}
     </td>
-      <td className="statTd sticky-col" data-label="Team Name">
+      <td style={clicked ? { backgroundColor: 'rgb(56,171,214)', color : 'black'} : {color: 'rgb(189,193,197)'}} onClick={() => handleClick()} className="statTd sticky-col" data-label="Team Name">
         {player.PTS}
     </td>
-      <td className="statTd sticky-col" data-label="Team Name">
+      <td style={clicked ? { backgroundColor: 'rgb(56,171,214)', color : 'black'} : {color: 'rgb(189,193,197)'}} onClick={() => handleClick()} className="statTd sticky-col" data-label="Team Name">
         {player.G}
     </td>
-      <td className="statTd sticky-col" data-label="Team Name">
+      <td style={clicked ? { backgroundColor: 'rgb(56,171,214)', color : 'black'} : {color: 'rgb(189,193,197)'}} onClick={() => handleClick()} className="statTd sticky-col" data-label="Team Name">
         {player.GS}
     </td>
-      <td className="statTd sticky-col" data-label="Team Name">
+      <td style={clicked ? { backgroundColor: 'rgb(56,171,214)', color : 'black'} : {color: 'rgb(189,193,197)'}} onClick={() => handleClick()} className="statTd sticky-col" data-label="Team Name">
         {player.MP}
     </td>
-      <td className="statTd sticky-col" data-label="Team Name">
+      <td style={clicked ? { backgroundColor: 'rgb(56,171,214)', color : 'black'} : {color: 'rgb(189,193,197)'}} onClick={() => handleClick()} className="statTd sticky-col" data-label="Team Name">
         {player.FG}
     </td>
-      <td className="statTd sticky-col" data-label="Team Name">
+      <td style={clicked ? { backgroundColor: 'rgb(56,171,214)', color : 'black'} : {color: 'rgb(189,193,197)'}} onClick={() => handleClick()} className="statTd sticky-col" data-label="Team Name">
         {player.FGA}
     </td>
-      <td className="statTd sticky-col" data-label="Team Name">
+      <td style={clicked ? { backgroundColor: 'rgb(56,171,214)', color : 'black'} : {color: 'rgb(189,193,197)'}} onClick={() => handleClick()} className="statTd sticky-col" data-label="Team Name">
         {player['FG%']}
     </td>
-      <td className="statTd sticky-col" data-label="Team Name">
+      <td style={clicked ? { backgroundColor: 'rgb(56,171,214)', color : 'black'} : {color: 'rgb(189,193,197)'}} onClick={() => handleClick()} className="statTd sticky-col" data-label="Team Name">
         {player['3P']}
     </td>
-      <td className="statTd sticky-col" data-label="Team Name">
+      <td style={clicked ? { backgroundColor: 'rgb(56,171,214)', color : 'black'} : {color: 'rgb(189,193,197)'}} onClick={() => handleClick()} className="statTd sticky-col" data-label="Team Name">
         {player['3PA']}
     </td>
-      <td className="statTd sticky-col" data-label="Team Name">
+      <td style={clicked ? { backgroundColor: 'rgb(56,171,214)', color : 'black'} : {color: 'rgb(189,193,197)'}} onClick={() => handleClick()} className="statTd sticky-col" data-label="Team Name">
         {player['3P%']}
     </td>
-      <td className="statTd sticky-col" data-label="Team Name">
+      <td style={clicked ? { backgroundColor: 'rgb(56,171,214)', color : 'black'} : {color: 'rgb(189,193,197)'}} onClick={() => handleClick()} className="statTd sticky-col" data-label="Team Name">
         {player['2P']}
     </td>
-      <td className="statTd sticky-col" data-label="Team Name">
+      <td style={clicked ? { backgroundColor: 'rgb(56,171,214)', color : 'black'} : {color: 'rgb(189,193,197)'}} onClick={() => handleClick()} className="statTd sticky-col" data-label="Team Name">
         {player['2PA']}
     </td>
-      <td className="statTd sticky-col" data-label="Team Name">
+      <td style={clicked ? { backgroundColor: 'rgb(56,171,214)', color : 'black'} : {color: 'rgb(189,193,197)'}} onClick={() => handleClick()} className="statTd sticky-col" data-label="Team Name">
         {player['2P%']}
     </td>
-      <td className="statTd sticky-col" data-label="Team Name">
+      <td style={clicked ? { backgroundColor: 'rgb(56,171,214)', color : 'black'} : {color: 'rgb(189,193,197)'}} onClick={() => handleClick()} className="statTd sticky-col" data-label="Team Name">
         {player.FTA}
     </td>
-      <td className="statTd sticky-col" data-label="Team Name">
+      <td style={clicked ? { backgroundColor: 'rgb(56,171,214)', color : 'black'} : {color: 'rgb(189,193,197)'}} onClick={() => handleClick()} className="statTd sticky-col" data-label="Team Name">
         {player['FT%']}
     </td>
-      <td className="statTd sticky-col" data-label="Team Name">
+      <td style={clicked ? { backgroundColor: 'rgb(56,171,214)', color : 'black'} : {color: 'rgb(189,193,197)'}} onClick={() => handleClick()} className="statTd sticky-col" data-label="Team Name">
         {player.ORB}
     </td>
-      <td className="statTd sticky-col" data-label="Team Name">
+      <td style={clicked ? { backgroundColor: 'rgb(56,171,214)', color : 'black'} : {color: 'rgb(189,193,197)'}} onClick={() => handleClick()} className="statTd sticky-col" data-label="Team Name">
         {player.DRB}
     </td>
-      <td className="statTd sticky-col" data-label="Team Name">
+      <td style={clicked ? { backgroundColor: 'rgb(56,171,214)', color : 'black'} : {color: 'rgb(189,193,197)'}} onClick={() => handleClick()} className="statTd sticky-col" data-label="Team Name">
         {player.TRB}
     </td>
-      <td className="statTd sticky-col" data-label="Team Name">
+      <td style={clicked ? { backgroundColor: 'rgb(56,171,214)', color : 'black'} : {color: 'rgb(189,193,197)'}} onClick={() => handleClick()} className="statTd sticky-col" data-label="Team Name">
         {player.AST}
     </td>
-      <td className="statTd sticky-col" data-label="Team Name">
+      <td style={clicked ? { backgroundColor: 'rgb(56,171,214)', color : 'black'} : {color: 'rgb(189,193,197)'}} onClick={() => handleClick()} className="statTd sticky-col" data-label="Team Name">
         {player.STL}
     </td>
-      <td className="statTd sticky-col" data-label="Team Name">
+      <td style={clicked ? { backgroundColor: 'rgb(56,171,214)', color : 'black'} : {color: 'rgb(189,193,197)'}} onClick={() => handleClick()} className="statTd sticky-col" data-label="Team Name">
         {player.BLK}
     </td>
-      <td className="statTd sticky-col" data-label="Team Name">
+      <td style={clicked ? { backgroundColor: 'rgb(56,171,214)', color : 'black'} : {color: 'rgb(189,193,197)'}} onClick={() => handleClick()} className="statTd sticky-col" data-label="Team Name">
         {player.TOV}
     </td>
     </tr>
