@@ -58,12 +58,10 @@ function StandingsContainer() {
           });
       });
   }, []);
-  console.log(standings)
-
 
 // TOGGLE HIGHEST LOWEST STAT FOR STANDINGS
 function handleClickS(category) {
-  console.log(category)
+
   let newArray = [...standings]
   setClicked(prev => !prev)
   clicked ?

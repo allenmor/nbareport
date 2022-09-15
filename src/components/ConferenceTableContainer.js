@@ -1,5 +1,5 @@
 import React from "react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import ConferenceCard from "./ConferenceCard";
 import "./ConferenceTableContainer.css";
 function ConferenceTableContainer({ teams }) {
@@ -18,6 +18,21 @@ function ConferenceTableContainer({ teams }) {
   function handleClick() {
     setClicked((prev) => !prev);
   }
+
+  useEffect(() => {
+
+    fetch('https://basketball.realgm.com/rss/wiretap/0/0.xml', {
+      mode: 'cors',
+      headers: {
+        'Access-Control-Allow-Origin':'*'
+      }
+    })
+      .then(response => response.json())
+      .then(data => {
+        console.log(data)
+      })
+
+  },[])
 
   return (
     <>
