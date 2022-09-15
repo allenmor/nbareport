@@ -247,7 +247,7 @@ position: absolute;
     align-items: center;
 }
 
-table {
+.searchTable {
     border: 1px solid #ccc;
     border-collapse: collapse;
     margin: 0;
@@ -255,45 +255,45 @@ table {
     width: 100%;
     table-layout: fixed;
   }
-  th {
+  .searchTh {
     background: #f8f8f8;
     position: sticky;
     top: 0;
   }
   
-  table caption {
+  .searchTable caption {
     font-size: 1.5em;
     margin: .5em 0 .75em;
   }
   
-  table tr {
+  .searchTable .searchTr {
     background-color: #f8f8f8;
     border: 1px solid #ddd;
     padding: .35em;
   }
   
-  table th,
-  table td {
+  .searchTable .searchTh,
+  .searchTable .searchTd {
     padding: .625em;
     text-align: center;
   }
   
-  table th {
+  .searchTable .searchTh {
     font-size: .85em;
     letter-spacing: .1em;
     text-transform: uppercase;
   }
   
   @media screen and (max-width: 600px) {
-    table {
+    .searchTable {
       border: 0;
     }
   
-    table caption {
+    .searchTable caption {
       font-size: 1.3em;
     }
     
-    table thead {
+    .searchTable .searchThead {
       border: none;
       clip: rect(0 0 0 0);
       height: 1px;
@@ -304,31 +304,27 @@ table {
       width: 1px;
     }
     
-    table tr {
+    .searchTable .searchTr {
       border-bottom: 3px solid #ddd;
       display: block;
       margin-bottom: .625em;
     }
     
-    table td {
+    .searchTable .searchTd {
       border-bottom: 1px solid #ddd;
       display: block;
       font-size: .8em;
       text-align: right;
     }
     
-    table td::before {
-      /*
-      * aria-label has no advantage, it won't be read inside a table
-      content: attr(aria-label);
-      */
+    .searchTable .searchTd::before {
       content: attr(data-label);
       float: left;
       font-weight: bold;
       text-transform: uppercase;
     }
     
-    table td:last-child {
+    .searchTable .searchTd:last-child {
       border-bottom: 0;
     }
     
@@ -346,7 +342,7 @@ table {
   }
 
   .dropDownUl {
-    /* margin-top: 7vh; */
+
     width: 520px;
     max-height: 250px;
     margin-right: 5rem;
@@ -355,8 +351,7 @@ table {
     background-color: #303134a3;
     position: flex;
     list-style-type: none;
-    top:13.5%; /*  change this value at higher res*/
-    /* transform: translate(-37.5%); */
+    top:13.5%; 
     overflow-y: scroll;
     margin-top: 0;
     min-width: 10vh;
@@ -416,7 +411,4 @@ table {
     height: 30rem;
     flex-direction: column;
     justify-content: space-around;
-  }
-  .playerPic{
-
   }

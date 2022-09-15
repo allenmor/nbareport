@@ -1,4 +1,8 @@
-table {
+.conferenceBtn {
+  margin-top: 4.5em;
+}
+
+.teamTable {
   border: 1px solid #ccc;
   border-collapse: collapse;
   margin: 0;
@@ -7,39 +11,39 @@ table {
   table-layout: fixed;
 }
 
-table caption {
+.teamTable caption {
   font-size: 1.5em;
   margin: 0.5em 0 0.75em;
 }
 
-table tr {
+.teamTable .tableTr {
   background-color: #f8f8f8;
   border: 1px solid #ddd;
   padding: 0.35em;
 }
 
-table th,
-table td {
+.teamTable .tableTh,
+.teamTable .tableTd {
   padding: 0.4em;
   text-align: center;
 }
 
-table th {
+.teamTable .tableTh {
   font-size: 0.85em;
   letter-spacing: 0.1em;
   text-transform: uppercase;
 }
 
 @media screen and (max-width: 600px) {
-  table {
+  .teamTable {
     border: 0;
   }
 
-  table caption {
+  .teamTable caption {
     font-size: 1.3em;
   }
 
-  table thead {
+  .teamTable .tableThead {
     border: none;
     clip: rect(0 0 0 0);
     height: 1px;
@@ -50,22 +54,22 @@ table th {
     width: 1px;
   }
 
-  table tr {
+  .teamTable .tableTr {
     border-bottom: 3px solid #ddd;
     display: block;
     margin-bottom: 0.625em;
   }
 
-  table td {
+  .teamTable .tableTd {
     border-bottom: 1px solid #ddd;
     display: block;
     font-size: 0.8em;
     text-align: right;
   }
 
-  table td::before {
+  .teamTable .tableTd::before {
     /*
-      * aria-label has no advantage, it won't be read inside a table
+      * aria-label has no advantage, it won't be read inside a .teamTable
       content: attr(aria-label);
       */
     content: attr(data-label);
@@ -74,7 +78,7 @@ table th {
     text-transform: uppercase;
   }
 
-  table td:last-child {
+  .teamTable .tableTd:last-child {
     border-bottom: 0;
   }
 }

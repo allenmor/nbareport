@@ -72,20 +72,20 @@ function Stats({ players, teams }) {
           next
         </button>
       </div>
-      <table>
+      <table className="statsTable">
         <caption>All Player Stats</caption>
-        <thead>
+        <thead className="statsThead">
           <tr>
-            <th scope="col">Season</th>
-            <th scope="col">Name</th>
-            <th scope="col">Image</th>
-            <th scope="col">Pos</th>
-            <th scope="col">Team</th>
-            <th scope="col">GP</th>
-            <th scope="col">Points</th>
-            <th scope="col">Rebounds</th>
-            <th scope="col">Assists</th>
-            <th scope="col">FGP</th>
+            <th className="statsTh" scope="col">Season</th>
+            <th className="statsTh" scope="col">Name</th>
+            <th className="statsTh" scope="col">Image</th>
+            <th className="statsTh" scope="col">Pos</th>
+            <th className="statsTh" scope="col">Team</th>
+            <th className="statsTh" scope="col">GP</th>
+            <th className="statsTh" scope="col">Points</th>
+            <th className="statsTh" scope="col">Rebounds</th>
+            <th className="statsTh" scope="col">Assists</th>
+            <th className="statsTh" scope="col">FGP</th>
           </tr>
         </thead>
         <tbody>

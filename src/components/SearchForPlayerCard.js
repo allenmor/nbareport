@@ -15,19 +15,19 @@ function SearchForPlayerCard({stats}) {
 
 
   return (
-    <tr>
-    <td data-label="YEAR">{stat.playoffs ? `${stat.season} Playoffs` : stat.season}</td>
-    <td data-label="TEAM">{teamName}</td>
-    <td data-label="GP">{stat.gp}</td>
-    <td data-label="PTS">{(stat.pts / stat.gp).toFixed(1)}</td>
-    <td data-label="REB">{((stat.orb + stat.drb) / stat.gp).toFixed(1)}</td>
-    <td data-label="AST">{(stat.ast / stat.gp).toFixed(1)}</td>
-    <td data-label="FG%">{((stat.fg / stat.fga) * 100).toFixed(1)}%</td>
-    <td data-label="3P%">{((stat.tp / stat.tpa) * 100).toFixed(1)}%</td>
-    <td data-label="3PM">{(stat.tp / stat.gp).toFixed(1)}</td>
-    <td data-label="STL">{(stat.stl / stat.gp).toFixed(1)}</td>
-    <td data-label="BLK">{(stat.blk /  stat.gp).toFixed(1)}</td>
-    <td data-label="TOV">{(stat.tov / stat.gp).toFixed(1)}</td>
+    <tr className='searchTr'>
+    <td className='searchTd' data-label="YEAR">{stat.playoffs ? `${stat.season} Playoffs` : stat.season}</td>
+    <td className='searchTd' data-label="TEAM">{teamName}</td>
+    <td className='searchTd' data-label="GP">{stat.gp}</td>
+    <td className='searchTd' data-label="PTS">{(stat.pts / stat.gp).toFixed(1)}</td>
+    <td className='searchTd' data-label="REB">{((stat.orb + stat.drb) / stat.gp).toFixed(1)}</td>
+    <td className='searchTd' data-label="AST">{(stat.ast / stat.gp).toFixed(1)}</td>
+    <td className='searchTd' data-label="FG%">{((stat.fg / stat.fga) * 100).toFixed(1)}%</td>
+    <td className='searchTd' data-label="3P%">{((stat.tp / stat.tpa) * 100).toFixed(1)}%</td>
+    <td className='searchTd' data-label="3PM">{(stat.tp / stat.gp).toFixed(1)}</td>
+    <td className='searchTd' data-label="STL">{(stat.stl / stat.gp).toFixed(1)}</td>
+    <td className='searchTd' data-label="BLK">{(stat.blk /  stat.gp).toFixed(1)}</td>
+    <td className='searchTd' data-label="TOV">{(stat.tov / stat.gp).toFixed(1)}</td>
   </tr>
   
   )

@@ -1,39 +1,36 @@
-.stadiumContainer {
-  margin: 5rem auto;
-  width: 95vw;
-  align-items: flex-end;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
+
+.teamTitle {
+  margin-top: 2.2em;
+  font-family: 'Quicksand', sans-serif;
+  /* text-align: center; */
 }
 
-.eachStadium {
-  display: flex;
-  flex-direction: column;
-
-  margin: 0.1rem;
-}
-.card{
-    width: 38vh; 
-}
-.img-wrap{
-    width: 95%;
-    height: 15rem;
-
-}
-.stadiumImage {
-object-fit: cover;
-
-height: 100%;
-  margin: 0.5em;
-}
-.stadiumInfo {
-  display: flex;
-  align-items: center;
-  font-family: sans-serif;
-  justify-content: space-around;
+.standingsTable{
+  border-collapse: collapse;
+  border: 1px solid black;
+  margin: 2em 0;
+  font-size: 1.2em;
+  min-width: 400px;
+  display: block;
+  overflow-x: auto;
+  white-space: nowrap;
+  background-color: rgb(32,33,37);
+  color: rgb(189,193,197);
+  font-weight: bold;
+  font-family: 'Quicksand', sans-serif;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.942);
+  
 }
 
-img {
-    width: 100%;
+.standingTd {
+  background-color: rgb(32,33,37);
+}
+
+.standingTd, .standingTh {
+  border: 1px solid black;
+  padding: 0.2rem;
+}
+.standingTh {
+  width: 20em;
 }

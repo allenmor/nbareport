@@ -60,23 +60,23 @@ function StatCard({ player }) {
   ];
 
   return (
-    <tr className="playerRow">
-      <td data-label="Season">
+    <tr className="playerRow statsTr">
+      <td className="statsTd" data-label="Season">
         <select onChange={handleChange}>{seasonSelect}</select>
       </td>
-      <td data-label="Name">{name}</td>
+      <td className="statsTd" data-label="Name">{name}</td>
       <td className="playerImg" data-label="Image">
         <img src={image} />
       </td>
-      <td data-label="Pos">{player.pos}</td>
+      <td className="statsTd" data-label="Pos">{player.pos}</td>
       <td className="teamName" data-label="Team">
         {region} {teamName}
       </td>
-      <td data-label="GP">{gamesPlayed}</td>
-      <td data-label="Points">{points}</td>
-      <td data-label="Rebounds">{rebounds}</td>
-      <td data-label="Assists">{assists}</td>
-      <td data-label="FGP">{fieldGoal}%</td>
+      <td className="statsTd" data-label="GP">{gamesPlayed}</td>
+      <td className="statsTd" data-label="Points">{points}</td>
+      <td className="statsTd" data-label="Rebounds">{rebounds}</td>
+      <td className="statsTd" data-label="Assists">{assists}</td>
+      <td className="statsTd" data-label="FGP">{fieldGoal}%</td>
     </tr>
   );
 }

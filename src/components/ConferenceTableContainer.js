@@ -21,16 +21,16 @@ function ConferenceTableContainer({ teams }) {
 
   return (
     <>
-      <table>
+      <table className="teamTable">
         <caption>
-        <button onClick={handleClick}>{clicked ? "Eastern Conference" : "Western Conference"}</button>
+        <button className="conferenceBtn" onClick={handleClick}>{clicked ? "Eastern Conference" : "Western Conference"}</button>
         </caption>
-        <thead>
-          <tr>
-            <th scope="col">Logo</th>
-            <th scope="col">Team Name</th>
-            <th scope="col">Contention</th>
-            <th scope="col">Years In The League</th>
+        <thead className="tableThead">
+          <tr className="tableTr">
+            <th className="tableTh" scope="col">Logo</th>
+            <th className="tableTh" scope="col">Team Name</th>
+            <th className="tableTh" scope="col">Contention</th>
+            <th className="tableTh" scope="col">Years In The League</th>
           </tr>
         </thead>
         <tbody>
