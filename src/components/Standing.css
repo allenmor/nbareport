@@ -6,6 +6,7 @@
   /* text-align: center; */
 }
 
+
 .standingsTable{
   border-collapse: collapse;
   border: 1px solid black;
@@ -26,13 +27,12 @@
 .standingTd {
   background-color: rgb(32,33,37);
 }
-
+.standingTh {
+  width: 20em;
+}
 .standingTd, .standingTh {
   border: 1px solid black;
   padding: 0.2rem;
-}
-.standingTh {
-  width: 20em;
 }
 .standingTh {
   cursor: pointer;

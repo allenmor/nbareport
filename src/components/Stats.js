@@ -32,8 +32,6 @@ function Stats() {
 
     setPlayerStat(newArray)
   }
-
-  console.log(playerStat)
   return (
 <>
       <h1 className="teamTitle">Player Per Game Stats</h1>
