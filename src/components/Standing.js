@@ -11,10 +11,10 @@ function Standing({team}) {
     {`${team.Rk}. ${team.Team}`}
     </td>
     <td className="standingTd" data-label="Contention">
-    {team.Overall.substring(0, 2)}
+    {team.win}
     </td>
     <td className="standingTd" data-label="Years In The League">
-      {team.Overall.slice(-2)}
+      {team.loss}
     </td>
     <td className="standingTd" data-label="Logo">
     {team.Home}

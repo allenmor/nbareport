@@ -7,7 +7,6 @@ function StandingsContainer() {
   const [standings, setStandings] = useState([]);
 
   const [clicked, setClicked] = useState(false)
-  const [winSort, setWinSort] = useState([])
 
   //FETCH GET INFO
   useEffect(() => {
@@ -34,24 +33,55 @@ function StandingsContainer() {
                 }
               }
             }
+            
+            arr.map((el, i) => {
+              return el.win = +el.Overall.slice(0, 2)
+            })
+            arr.map((el, i) => {
+              return el.loss = +el.Overall.slice(3, 5)
+            })
+            arr.map((el, i) => {
+              return el.homeW = +el.Home.slice(0, 2)
+            })
+            arr.map((el, i) => {
+              return el.homeL = +el.Home.slice(3, 5)
+            })
+            arr.map((el, i) => {
+              return el.roadW = +el.Road.slice(0, 2)
+            })
+            arr.map((el, i) => {
+              return el.roadL = +el.Road.slice(3, 5)
+            })
+
+            // console.log(newArr)
             setStandings(arr);
-
-            console.log(arr)
-            //Toggle Wins
-            let winArr = [...arr]
-            setWinSort(winArr.sort(function(a, b) {
-            }))
-
           });
       });
   }, []);
+  console.log(standings)
 
-//TOGGLE HGHEST AND LOWEST STAT FOR EACH COLUMN
+
+// TOGGLE HIGHEST LOWEST STAT FOR STANDINGS
+function handleClickS(category) {
+  console.log(category)
+  let newArray = [...standings]
+  setClicked(prev => !prev)
+  clicked ?
+  newArray.sort((a,b) => {
+    return a[category] - b[category]
+  }) : newArray.sort((a,b) => {
+    return b[category] - a[category]
+  })
+  setStandings(newArray)
+}
+
+
+//TOGGLE HGHEST AND LOWEST STAT FOR EACH COLUMN With stats
   function handleClick(category){
-    console.log(category)
+    console.log(standings)
     let newArray = [...standings]
     setClicked(prev => !prev)
-    
+ 
     clicked ? 
     newArray.sort((a,b) => {
       return a.stats[category] - b.stats[category]
@@ -75,11 +105,11 @@ function StandingsContainer() {
         <thead className="standingThead">
           <tr className="standingTr">
             <th className="standingTh sticky-col" scope="col">Team</th>
-            <th className="standingTh" scope="col">W</th>
-            <th className="standingTh" scope="col">L</th>
-            <th className="standingTh" scope="col">Home</th>
-            <th className="standingTh" scope="col">Road</th>
-            <th onClick={() => handleClick("FG%")}className="standingTh" scope="col">FG%</th>
+            <th onClick={() => handleClickS("win")}className="standingTh" scope="col">W</th>
+            <th onClick={() => handleClickS("loss")}className="standingTh" scope="col">L</th>
+            <th onClick={() => handleClickS("homeW")}className="standingTh" scope="col">Home</th>
+            <th onClick={() => handleClickS("roadW")} className="standingTh" scope="col">Road</th>
+            <th onClick={() => handleClick("FG%")} className="standingTh" scope="col">FG%</th>
             <th onClick={() => handleClick("3P")} className="standingTh" scope="col">3P</th>
             <th onClick={() => handleClick("3PA")} className="standingTh" scope="col">3PA</th>
             <th onClick={() => handleClick("3P%")} className="standingTh" scope="col">3P%</th>
