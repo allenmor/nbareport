@@ -350,6 +350,7 @@ width: 17em;
 .search_tableDiv {
   height: 99%;
   z-index: 0;
+  width: 99%;
 }
 
 .searchTable{
