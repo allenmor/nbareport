@@ -33,4 +33,4 @@ function SearchForPlayerCard({stats}) {
   )
 }
 
-export default SearchForPlayerCard;
+export default SearchForPlayerCard

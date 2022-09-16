@@ -351,6 +351,8 @@ width: 17em;
   height: 99%;
   z-index: 0;
   width: 99%;
+  position: absolute;
+  margin-top: 10em;
 }
 
 .searchTable{
@@ -410,17 +412,18 @@ width: 17em;
     z-index: 2;
     color: white;
     background-color: #303134a3;
-    position: absolute;
+    /* position: absolute; */
     list-style-type: none;
     overflow-y: scroll;
-    margin-top: 13.3em;
+    top: 10%;
     min-width: 10vh;
     text-align: left;
     font-size: 2vh;
     padding: 0;
     border-radius: 5px;
     margin-left: 3em;
-    
+    margin-top: 0;
+
   }
   .dropDownUl::-webkit-scrollbar{
     width: 0;
