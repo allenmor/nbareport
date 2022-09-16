@@ -1,10 +1,10 @@
 import React from 'react'
-import ConferenceTableContainer from './ConferenceTableContainer';
+import Home from './Home';
 
 function FrontPage({teams}) {
   return (
     <div>
-      <ConferenceTableContainer teams={teams}/>
+      <Home />
     </div>
   )
 }

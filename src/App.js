@@ -27,7 +27,7 @@ function App() {
     <>
     <NavBar></NavBar>
     <Routes>
-      <Route path="/" element={<FrontPage teams={teams}/>} />
+      <Route path="/" element={<FrontPage />} />
       <Route path="/standings" element={<StandingsContainer />} />
       <Route path="/stats" element={<Stats/>} />
       <Route path="/searchforplayer" element={<SearchForPlayer teams={teams} players={players}/>} />
