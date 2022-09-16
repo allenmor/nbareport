@@ -34,7 +34,7 @@ function Stats() {
   }
   return (
 <>
-      <h1 className="teamTitle">Player Per Game Stats</h1>
+      <h1 className="teamTitle-stats">Player Per Game Stats</h1>
       <div className="stat_tableDiv">
       <table className="statsTable">
         <caption>

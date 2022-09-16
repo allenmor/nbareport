@@ -63,11 +63,19 @@ counter-increment: li-counter;
 .sourceName {
      border-bottom: 
      1px dashed #000; 
-     width: 80%; margin: 
-     auto; margin-top: 5%; 
+     width: 80%; 
+     margin: auto; 
+     margin-top: 2em; 
      margin-bottom: 5%; 
 }
 
+#root {
+     margin: 0;
+}
+
+.tilesDiv {
+     margin-top: 10em;
+}
 
 
 

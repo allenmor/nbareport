@@ -93,7 +93,7 @@ function handleClickS(category) {
 
   return (
     <>
-      <h1 className="teamTitle">Team Standings/Stats</h1>
+      <h1 className="teamTitle-standing">Team Standings/Stats</h1>
       <div className="standing_tableDiv">
       <table className="standingsTable">
         <caption>
