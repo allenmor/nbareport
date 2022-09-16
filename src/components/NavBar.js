@@ -13,7 +13,6 @@ function NavBar() {
       <Link className="nav-links"to="/searchforplayer">Search</Link>
       <Link className="nav-links" to="/news">News</Link>
       </div>
-      <p className="allen"><a className="allenLink" href="https://www.linkedin.com/in/allenmord/">Allen Mordukhaev</a></p>
     </div>
     </>
   );

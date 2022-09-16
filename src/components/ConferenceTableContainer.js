@@ -1,5 +1,5 @@
 import React from "react";
-import { useState, useEffect } from "react";
+import { useState} from "react";
 import ConferenceCard from "./ConferenceCard";
 import "./ConferenceTableContainer.css";
 function ConferenceTableContainer({ teams }) {
@@ -7,11 +7,11 @@ function ConferenceTableContainer({ teams }) {
 
   //EASTERN CONFERENCE
   let eastern = teams.filter((el, i) => {
-    return el.cid == 0;
+    return el.cid === 0;
   });
   //WESTERN CONFERENCE
   let western = teams.filter((el, i) => {
-    return el.cid == 1;
+    return el.cid === 1;
   });
 
 

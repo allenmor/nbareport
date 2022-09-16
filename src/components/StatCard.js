@@ -1,6 +1,6 @@
 import React from "react";
 import "./Stats.css";
-import { useState, useEffect } from "react";
+import { useState} from "react";
 
 function StatCard({player}) {
 

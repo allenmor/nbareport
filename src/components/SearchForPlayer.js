@@ -128,7 +128,7 @@ function SearchForPlayer({ players, teams }) {
         </form>
         <ul
           style={
-            searchingPlayers.length > 620 || searchingPlayers.length == 0
+            searchingPlayers.length > 620 || searchingPlayers.length === 0
               ? { display: "none" }
               : { display: "block" }
           }

@@ -1,4 +1,5 @@
 import "./App.css";
+import React from "react";
 import FrontPage from "./components/FrontPage";
 import { Route, Routes } from "react-router-dom";
 import StandingsContainer from "./components/StandingsContainer";
