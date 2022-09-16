@@ -156,10 +156,10 @@ function SearchForPlayer({ players, teams }) {
           </div>
         </div>
       </div>
-      <div className="tableDiv">
+      <div className="search_tableDiv">
         <table className="searchTable">
           <caption>Player Stats</caption>
-          <thead className="searchThead">
+          <thead className="searchTh">
             <tr className="searchTr">
               <th className="searchTh" scope="col">Year</th>
               <th className="searchTh" scope="col">Team</th>
