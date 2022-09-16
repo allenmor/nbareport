@@ -76,7 +76,6 @@ function handleClickS(category) {
 
 //TOGGLE HGHEST AND LOWEST STAT FOR EACH COLUMN With stats
   function handleClick(category){
-    console.log(standings)
     let newArray = [...standings]
     setClicked(prev => !prev)
  

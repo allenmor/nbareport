@@ -30,7 +30,7 @@
 
 .statTd {
   background-color: rgb(32,33,37);
-
+  cursor: default;
 }
 
 .statTd, .statTh {
