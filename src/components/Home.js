@@ -10,15 +10,12 @@ function Home() {
     fetch('https://raw.githubusercontent.com/allenmor/nbareport/main/news.json')
     .then(res => res.json())
     .then(data => {
-      console.log(data.rss.channel.item)
-
       let info = data.rss.channel.item
       let newInfo = info.filter((el, i) => {
         return el.thumbnail
       })
-      console.log(newInfo)
-      setNews(newInfo)
-      // console.l
+      let removeG = newInfo.filter(function (str) { return !str.title.toLowerCase().includes('realgm'); })
+      setNews(removeG)
     })
   },[])
 
