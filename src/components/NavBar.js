@@ -11,7 +11,7 @@ function NavBar() {
       <Link className="nav-links" to="/standings">Standings</Link>
       <Link className="nav-links" to="/stats">Stats</Link>
       <Link className="nav-links"to="/searchforplayer">Search</Link>
-      <Link className="nav-links" to="/news">Leaders</Link>
+      {/* <Link className="nav-links" to="/news">Leaders</Link> */}
       </div>
     </div>
     </>
