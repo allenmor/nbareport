@@ -14,8 +14,9 @@ function Home() {
       let newInfo = info.filter((el, i) => {
         return el.thumbnail
       })
-      let removeG = newInfo.filter(function (str) { return !str.title.toLowerCase().includes('realgm'); })
+      let removeG = newInfo.filter(function (str) { return !str.title.toLowerCase().includes('realgm') && !str.description.toLowerCase().includes('realgm'); })
       setNews(removeG)
+      console.log(removeG)
     })
   },[])
 
