@@ -16,7 +16,6 @@ function Home() {
       })
       let removeG = newInfo.filter(function (str) { return !str.title.toLowerCase().includes('realgm') && !str.description.toLowerCase().includes('realgm'); })
       setNews(removeG)
-      console.log(removeG)
     })
   },[])
 
