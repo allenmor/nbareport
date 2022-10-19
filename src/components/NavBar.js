@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 function NavBar() {
   return (
     <>
-    <div className="topNav sticky" id="myTopnav">
+    <div className="topNav" id="myTopnav">
       <div className="justLinks">
       <Link className="nav-links nbaReport" to="/">NBA Report</Link>
       <Link className="nav-links" to="/standings">Standings</Link>
