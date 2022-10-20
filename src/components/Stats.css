@@ -1,7 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
 
 .teamTitle-stats {
-  margin-top: 2.2em;
   font-family: 'Quicksand', sans-serif;
   color: #363945;
   /* text-align: center; */
@@ -47,4 +46,10 @@
 }
 .statTh {
   cursor: pointer;
+}
+
+.season-button{
+  color: blue;
+  cursor: pointer;
+  margin-left: 1vw;
 }

@@ -7,14 +7,16 @@ function Stats() {
 
   const [playerStat, setPlayerStat] = useState([])
   const [clicked, setClicked] = useState(false)
+  const [prevSeasonClicked, setPrevSeasonClicked] = useState(false)
   //WHEN YOU CLICK ON POINTS SORTS ARRAY BY HIGHEST POINTS FIRSTxw
   useEffect(() => {
-    fetch('https://raw.githubusercontent.com/allenmor/nbareport/main/currentStats.json')
+    fetch(`https://raw.githubusercontent.com/allenmor/nbareport/main/${!prevSeasonClicked ? 'currentStats' : 'stats21-22'}.json`)
     .then(res => res.json())
     .then(data => {
       setPlayerStat(data)
+      console.log(data)
     })
-  },[])
+  },[prevSeasonClicked])
 
 //TOGGLE STATS HIGHEST AND LOWEST
   function handleClick(category){
@@ -32,9 +34,14 @@ function Stats() {
 
     setPlayerStat(newArray)
   }
+
+  function handlePrevSeasonClicked() {
+    setPrevSeasonClicked(prev => !prev)
+  }
   return (
 <>
-      <h1 className="teamTitle-stats">Player Per Game Stats</h1>
+      <p onClick={handlePrevSeasonClicked} className="season-button">{prevSeasonClicked ? '2022-2023': "2021-2022"}</p>
+      <h1 className="teamTitle-stats">Player Per Game Stats {!prevSeasonClicked ? '2022-2023 Season': "2021-2022 Season"}</h1>
       <div className="stat_tableDiv">
       <table className="statsTable">
         <caption>
