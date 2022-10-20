@@ -15,6 +15,7 @@ function StandingsContainer() {
     )
       .then((res) => res.json())
       .then((standings) => {
+
         fetch(
           "https://raw.githubusercontent.com/allenmor/nbareport/main/teamStats.json"
         )
@@ -35,10 +36,10 @@ function StandingsContainer() {
             }
             
             arr.map((el, i) => {
-              return el.win = +el.Overall.slice(0, 2)
+              return el.win = +el.Overall.slice(0, 1)
             })
             arr.map((el, i) => {
-              return el.loss = +el.Overall.slice(3, 5)
+              return el.loss = +el.Overall.slice(2, 4)
             })
             arr.map((el, i) => {
               return el.homeW = +el.Home.slice(0, 2)

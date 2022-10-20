@@ -8,6 +8,7 @@ function Standing({team}) {
   function handleClick(){
     setClicked(prev => !prev)
   }
+  console.log(team)
 
   return (
   <tr className='standingTr'>
