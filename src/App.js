@@ -8,6 +8,7 @@ import NavBar from "./components/NavBar";
 import SearchForPlayer from "./components/SearchForPlayer";
 import TopTenContainer from "./components/TopTenContainer";
 import { useState, useEffect } from "react";
+import TodaysGames from "./components/TodaysGames";
 
 function App() {
   const [teams, setTeams] = useState([]);
@@ -34,6 +35,7 @@ function App() {
           element={<SearchForPlayer teams={teams} players={players} />}
         />
         <Route path="/news" element={<TopTenContainer />} />
+        <Route path="/todaysgames" element={<TodaysGames />} />
       </Routes>
     </>
   );
