@@ -27,7 +27,7 @@ function StandingsContainer() {
 
             for(let i = 0; i < standings.length; i ++) {
               for(let j = 0; j < data.length; j++) {
-                if(data[j].Team == standings[i].Team) {
+                if(data[j].Team === standings[i].Team) {
                   teamStats.push(data[j])
                 }
               }
@@ -106,7 +106,7 @@ function handleClickS(category) {
 
   return (
     <>
-      <h1 className="teamTitle-standing">Team Standings/Stats</h1>
+      <h1 className="teamTitle-standing">Team Standings/Stats 2022-2023</h1>
       <div className="standing_tableDiv">
       <table className="standingsTable">
         <caption>

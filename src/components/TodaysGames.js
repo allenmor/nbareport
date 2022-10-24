@@ -12,7 +12,6 @@ function TodaysGames() {
     .then(res => res.json())
     .then(data => {
         setGames(data.scoreboard.games)
-        console.log(data.scoreboard.games)
     })
     },[])
 

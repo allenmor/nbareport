@@ -7,20 +7,17 @@ function Stats() {
 
   const [playerStat, setPlayerStat] = useState([])
   const [clicked, setClicked] = useState(false)
-  const [prevSeasonClicked, setPrevSeasonClicked] = useState(false)
   //WHEN YOU CLICK ON POINTS SORTS ARRAY BY HIGHEST POINTS FIRSTxw
   useEffect(() => {
     fetch(`https://raw.githubusercontent.com/allenmor/nbareport/main/currentStats.json`)
     .then(res => res.json())
     .then(data => {
       setPlayerStat(data)
-      console.log(data)
     })
-  },[prevSeasonClicked])
+  },[])
 
 //TOGGLE STATS HIGHEST AND LOWEST
   function handleClick(category){
-    // console.log(standings)
     let newArray = [...playerStat]
     setClicked(prev => !prev)
  
@@ -35,73 +32,12 @@ function Stats() {
     setPlayerStat(newArray)
   }
 
-  // function handlePrevSeasonClicked() {
-  //   setPrevSeasonClicked(prev => !prev)
-  // }
-
-  // function handleUpdateClick() {
-
-
-  //   fetch('https://raw.githubusercontent.com/allenmor/nbareport/main/stats20-21.json')
-  //   .then(res => res.json())
-  //   .then(data => {
-  //     data.map((el, i) => {
-  //         fetch('/players2020', {
-  //           method: 'POST',
-  //           headers: {
-  //               'Content-Type': 'application/json'
-  //           },
-  //           body: JSON.stringify({
-  //             ['2P']: el['2P'],
-  //             ['2P%']: el['2P%'],
-  //             ['2PA']: el['2PA'],
-  //             ['3P']: el['3P'],
-  //             ['3P%']: el['3P%'],
-  //             ['3PA']: el['3PA'],
-  //             ['AST']: el['AST'],
-  //             ['Age']: el['Age'],
-  //             ['BLK']: el['BLK'],
-  //             ['DRB']: el['DRB'],
-  //             ['FG']: el['FG'],
-  //             ['FG%']: el['FG%'],
-  //             ['FGA']: el['FGA'],
-  //             ['FT']: el['FT'],
-  //             ['FT%']: el['FT%'],
-  //             ['FTA']: el['FTA'],
-  //             ['G']: el['G'],
-  //             ['GS']: el['GS'],
-  //             ['MP']: el['MP'],
-  //             ['ORB']: el['ORB'],
-  //             ['PF']: el['PF'],
-  //             ['PTS']: el['PTS'],
-  //             ['Player']: el['Player'],
-  //             ['Player-additional']: el['Player-additional'],
-  //             ['Pos']: el['Pos'],
-  //             ['Rk']: el['Rk'],
-  //             ['STL']: el['STL'],
-  //             ['TOV']: el['TOV'],
-  //             ['TRB']: el['TRB'],
-  //             ['Tm']: el['Tm'],
-  //             ['eFG%']: el['eFG%']
-  //           })
-  //       })
-  //       .then(res => res.json())
-  //       .then(data => {
-  //         console.log(data)
-  //       })
-  //     })
-  //   })
-
-  // }
   return (
 <>
-{/* <button onClick={handleUpdateClick}>Update Players</button> */}
-      {/* <p onClick={handlePrevSeasonClicked} className="season-button">{prevSeasonClicked ? '2022-2023': "2021-2022"}</p> */}
-      <h1 className="teamTitle-stats">Player Per Game Stats</h1>
+      <h1 className="teamTitle-stats">Player Per Game Stats 2022 - 2023</h1>
       <div className="stat_tableDiv">
       <table className="statsTable">
         <caption>
-          {/* <button onClick={handleClick}>{clicked ? "Eastern Conference" : "Western Conference"}</button> */}
         </caption>
         <thead className="statThead">
           <tr className="statTr">
