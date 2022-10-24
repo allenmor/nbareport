@@ -30,3 +30,12 @@ padding: 1rem;
     text-align: center;
     border-bottom: 1px solid rgb(106, 6, 221);
 }
+
+@media(max-width: 500px) {
+    .team-logos-games {
+        width: 25vw;
+    }
+    .away-home {
+        align-items: flex-start;
+    }
+}
