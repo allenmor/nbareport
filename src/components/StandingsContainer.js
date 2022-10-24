@@ -11,7 +11,7 @@ function StandingsContainer() {
   //FETCH GET INFO
   useEffect(() => {
     fetch(
-      "https://raw.githubusercontent.com/allenmor/nbareport/main/standings21-22.json"
+      "https://raw.githubusercontent.com/allenmor/nbareport/main/currentStandings.json"
     )
       .then((res) => res.json())
       .then((standings) => {
@@ -20,7 +20,19 @@ function StandingsContainer() {
           "https://raw.githubusercontent.com/allenmor/nbareport/main/teamStats.json"
         )
           .then((res) => res.json())
-          .then((teamStats) => {
+          .then((data) => {
+
+
+            let teamStats = []
+
+            for(let i = 0; i < standings.length; i ++) {
+              for(let j = 0; j < data.length; j++) {
+                if(data[j].Team == standings[i].Team) {
+                  teamStats.push(data[j])
+                }
+              }
+            } 
+
             const arr = [];
             for (let i = 0; i < standings.length; i++) {
               for (let j = 0; j < teamStats.length; j++) {
@@ -36,10 +48,10 @@ function StandingsContainer() {
             }
             
             arr.map((el, i) => {
-              return el.win = +el.Overall.slice(0, 2)
+              return el.win = +el.Overall.slice(0, 1)
             })
             arr.map((el, i) => {
-              return el.loss = +el.Overall.slice(3, 5)
+              return el.loss = +el.Overall.slice(2, 4)
             })
             arr.map((el, i) => {
               return el.homeW = +el.Home.slice(0, 2)
