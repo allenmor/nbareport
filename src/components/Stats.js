@@ -97,7 +97,7 @@ function Stats() {
 <>
 {/* <button onClick={handleUpdateClick}>Update Players</button> */}
       {/* <p onClick={handlePrevSeasonClicked} className="season-button">{prevSeasonClicked ? '2022-2023': "2021-2022"}</p> */}
-      <h1 className="teamTitle-stats">Player Per Game Stats {!prevSeasonClicked ? '2022-2023 Season': "2021-2022 Season"}</h1>
+      <h1 className="teamTitle-stats">Player Per Game Stats</h1>
       <div className="stat_tableDiv">
       <table className="statsTable">
         <caption>
