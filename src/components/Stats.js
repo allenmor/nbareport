@@ -10,7 +10,7 @@ function Stats() {
   const [prevSeasonClicked, setPrevSeasonClicked] = useState(false)
   //WHEN YOU CLICK ON POINTS SORTS ARRAY BY HIGHEST POINTS FIRSTxw
   useEffect(() => {
-    fetch(`https://raw.githubusercontent.com/allenmor/nbareport/main/stats21-22.json`)
+    fetch(`https://raw.githubusercontent.com/allenmor/nbareport/main/currentStats.json`)
     .then(res => res.json())
     .then(data => {
       setPlayerStat(data)
