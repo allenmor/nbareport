@@ -91,6 +91,10 @@ function TodaysGameCard({ game }) {
       team: "LA Clippers",
       logo: "https://cdn.shopify.com/s/files/1/1949/1233/products/la-clippers.jpg?v=1575428341",
     }
+    {
+      team: "Charlotte Hornets",
+      logo: "https://upload.wikimedia.org/wikipedia/en/thumb/c/c4/Charlotte_Hornets_%282014%29.svg/800px-Charlotte_Hornets_%282014%29.svg.png",
+    }
   ];
 
   let away_logo = logos.filter((el, i) => {
@@ -99,6 +103,8 @@ function TodaysGameCard({ game }) {
   let home_logo = logos.filter((el, i) => {
     return el.team === game.homeTeam.teamCity + " " + game.homeTeam.teamName;
   });
+
+  console.log(home_logo)
 
 
   return (
