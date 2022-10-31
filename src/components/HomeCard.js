@@ -16,7 +16,10 @@ function HomeCard({info}) {
       <img alt="newsImg" className="newsImg" src={info.thumbnail._url} />
       <p className="newsDescription">{info.description.replace(/<[^>]*>?/gm, '')}</p>
     </div>
-    <button onClick={handleReadMoreClick} className="read-more">{clicked ? "Read More" : "Read Less"}</button>
+    <div className="read-more-div">
+
+    {info.description.replace(/<[^>]*>?/gm).length > 1070 ? <button onClick={handleReadMoreClick} className="read-more">{clicked  ? "Read More" : "Read Less"}</button> : ''}
+    </div>
     </>
   );
 }
