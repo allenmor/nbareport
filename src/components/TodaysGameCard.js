@@ -104,7 +104,6 @@ function TodaysGameCard({ game }) {
     return el.team === game.homeTeam.teamCity + " " + game.homeTeam.teamName;
   });
 
-  console.log(home_logo)
 
 
   return (
