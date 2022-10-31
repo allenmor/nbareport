@@ -86,7 +86,7 @@ function TodaysGameCard({ game }) {
     {
       team: "Detroit Pistons",
       logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7c/Pistons_logo17.svg/1200px-Pistons_logo17.svg.png",
-    }
+    },
     {
       team: "LA Clippers",
       logo: "https://cdn.shopify.com/s/files/1/1949/1233/products/la-clippers.jpg?v=1575428341",
