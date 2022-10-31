@@ -66,6 +66,30 @@ function TodaysGameCard({ game }) {
     {
       team: "Portland Trail Blazers",
       logo: "https://content.sportslogos.net/logos/6/239/thumbs/23997252018.gif",
+    },
+    {
+      team: "Sacramento Kings",
+      logo: "https://content.sportslogos.net/news/2016/04/Kings-New-Logo-confirmed.png",
+    },
+    {
+      team: "Washington Wizards",
+      logo: "https://upload.wikimedia.org/wikipedia/en/thumb/0/02/Washington_Wizards_logo.svg/640px-Washington_Wizards_logo.svg.png",
+    },
+    {
+      team: "Atlanta Hawks",
+      logo: "https://upload.wikimedia.org/wikipedia/en/thumb/2/24/Atlanta_Hawks_logo.svg/1200px-Atlanta_Hawks_logo.svg.png",
+    },
+    {
+      team: "Milwaukee Bucks",
+      logo: "https://cdn.nba.com/teams/uploads/sites/1610612749/2022/03/1150409-wallpaper-primary-640x480-1.jpg",
+    },
+    {
+      team: "Detroit Pistons",
+      logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7c/Pistons_logo17.svg/1200px-Pistons_logo17.svg.png",
+    }
+    {
+      team: "LA Clippers",
+      logo: "https://cdn.shopify.com/s/files/1/1949/1233/products/la-clippers.jpg?v=1575428341",
     }
   ];
 
