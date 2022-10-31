@@ -39,6 +39,9 @@
   border: none;
 } 
 
+.nbaReport img {
+  width: 3rem;
+}
 
 .allen {
   padding-right: 0.5rem;
