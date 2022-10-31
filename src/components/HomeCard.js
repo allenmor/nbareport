@@ -6,6 +6,7 @@ function HomeCard({info}) {
   const [clicked, setClicked] = useState(true)
 
   function handleReadMoreClick(){
+    console.log(info.description.replace(/<[^>]*>?/gm).length)
     setClicked(prev => !prev)
   }
   return (
@@ -14,12 +15,9 @@ function HomeCard({info}) {
       <h1 className='eachNews-h1'>{info.title}</h1>
       <p className="newsDate">{info.pubDate}</p>
       <img alt="newsImg" className="newsImg" src={info.thumbnail._url} />
-      {!clicked ? <p className="newsDescription">{info.description.replace(/<[^>]*>?/gm, '')}</p> : ''}
+      { <p className="newsDescription">{info.description.replace(/<[^>]*>?/gm, '')}</p>}
     </div>
-    <div className="read-more-div">
-
-    <button onClick={handleReadMoreClick} className="read-more">{clicked  ? "Read More" : "Read Less"}</button>
-    </div>
+      {info.description.replace(/<[^>]*>?/gm).length > 1070 || window.innerWidth < 500 && info.description.replace(/<[^>]*>?/gm).length >357 ? <button onClick={handleReadMoreClick} className="read-more">{clicked  ? "Read More" : "Read Less"}</button> : ''}
     </>
   );
 }

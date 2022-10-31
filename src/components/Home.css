@@ -28,6 +28,12 @@
   text-align: center;
 }
 
+.eachNews-card-expanded h1 {
+  text-align: center;
+}
+.eachNews-card-expanded .newsDate {
+  text-align: center;
+}
 .eachNews-card::after {
   content: "";
   position: absolute;
@@ -87,6 +93,9 @@
 	font: inherit;
 	cursor: pointer;
 	outline: inherit;
+  text-align: right;
+margin-left: auto;
+margin-right: auto;
 }
 
 .read-more:hover {
@@ -96,5 +105,4 @@
 .read-more-div {
   text-align: center;
   margin-bottom: 5em;
-
 }
