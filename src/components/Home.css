@@ -18,6 +18,14 @@
  overflow-y: hidden;
  max-height: 37rem;
  margin-bottom: 0;
+
+}
+
+.eachNews-h1 {
+  text-align: center;
+}
+.eachNews-card .newsDate{
+  text-align: center;
 }
 
 .eachNews-card::after {
