@@ -18,7 +18,7 @@ function TodaysGames() {
     },[])
 
   return (
-    <div>
+    <div className='todays-games-div'>
         <h1 className='date'>{date}</h1>
         {games.map((el, i) => {
             return <TodaysGameCard game={el} key={i}/>

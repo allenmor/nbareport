@@ -3,27 +3,39 @@
     
 }
 
+.todays-games-div{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 .each-game {
     display: flex;
     align-items: center;
-    padding: 1rem;
-    width: 100%;
+    width: 97%;
+    border: 1px solid black;
+    height: 13rem;
+    border-radius: 5px;
+    margin-bottom: 1rem;
 }
 
 .game-container {
-border-bottom: 1px solid gray;
+border: 1px solid gray;
 display: flex;
 flex-direction: column;
 align-items: center;
 width: 100%;
-height: 24rem;
+height: 12rem;
+margin-bottom: 0.8rem;
 }
 .away-home {
 display: flex;
 align-items: center;
 flex-direction: column;
-padding: 1rem;
+
 width: 50%;
+
+
 }
 .team-logos-games {
 width: 10rem;
@@ -35,14 +47,25 @@ width: 10rem;
 
 .date {
     text-align: center;
-    border-bottom: 1px solid rgb(106, 6, 221);
+    /* border-bottom: 1px solid rgb(106, 6, 221); */
 }
 
+.team-names {
+    margin: 0;
+}
+
+.team-record {
+    margin: 0;
+}
+
+.time-of-game {
+    text-align: center;
+}
 @media(max-width: 500px) {
     .team-logos-games {
         width: 25vw;
     }
     .away-home {
-        align-items: flex-start;
+
     }
 }

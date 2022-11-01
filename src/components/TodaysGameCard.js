@@ -5,15 +5,15 @@ function TodaysGameCard({ game }) {
   let logos = [
     {
       team: "Indiana Pacers",
-      logo: "https://content.sportslogos.net/logos/6/218/thumbs/21870342016.gif",
+      logo: "https://cdn.nba.com/logos/nba/1610612754/primary/L/logo.svg",
     },
     {
       team: "Philadelphia 76ers",
-      logo: "https://content.sportslogos.net/logos/6/224/thumbs/22448122018.gif",
+      logo: "https://cdn.nba.com/logos/nba/1610612755/primary/L/logo.svg",
     },
     {
       team: "Toronto Raptors",
-      logo: "https://content.sportslogos.net/logos/6/227/thumbs/22770242021.gif",
+      logo: "https://cdn.nba.com/logos/nba/1610612761/primary/L/logo.svg",
     },
     {
       team: "Miami Heat",
@@ -37,19 +37,19 @@ function TodaysGameCard({ game }) {
     },
     {
       team: "Utah Jazz",
-      logo: "https://content.sportslogos.net/logos/6/234/thumbs/23485132023.gif",
+      logo: "https://cdn.nba.com/logos/nba/1610612762/primary/L/logo.svg",
     },
     {
       team: "Houston Rockets",
-      logo: "https://content.sportslogos.net/logos/6/230/thumbs/23068302020.gif",
+      logo: "https://cdn.nba.com/logos/nba/1610612745/primary/L/logo.svg",
     },
     {
       team: "Brooklyn Nets",
-      logo: "https://content.sportslogos.net/logos/6/3786/thumbs/hsuff5m3dgiv20kovde422r1f.gif",
+      logo: "https://cdn.nba.com/logos/nba/1610612751/primary/L/logo.svg",
     },
     {
       team: "Memphis Grizzlies",
-      logo: "https://content.sportslogos.net/logos/6/231/thumbs/23143732019.gif",
+      logo: "https://cdn.nba.com/logos/nba/1610612763/primary/L/logo.svg",
     },
     {
       team: "San Antonio Spurs",
@@ -69,31 +69,31 @@ function TodaysGameCard({ game }) {
     },
     {
       team: "Sacramento Kings",
-      logo: "https://content.sportslogos.net/news/2016/04/Kings-New-Logo-confirmed.png",
+      logo: "https://cdn.nba.com/logos/nba/1610612758/primary/L/logo.svg",
     },
     {
       team: "Washington Wizards",
-      logo: "https://upload.wikimedia.org/wikipedia/en/thumb/0/02/Washington_Wizards_logo.svg/640px-Washington_Wizards_logo.svg.png",
+      logo: "https://cdn.nba.com/logos/nba/1610612764/primary/L/logo.svg",
     },
     {
       team: "Atlanta Hawks",
-      logo: "https://upload.wikimedia.org/wikipedia/en/thumb/2/24/Atlanta_Hawks_logo.svg/1200px-Atlanta_Hawks_logo.svg.png",
+      logo: "https://cdn.nba.com/logos/nba/1610612737/primary/L/logo.svg",
     },
     {
       team: "Milwaukee Bucks",
-      logo: "https://cdn.nba.com/teams/uploads/sites/1610612749/2022/03/1150409-wallpaper-primary-640x480-1.jpg",
+      logo: "https://cdn.nba.com/logos/nba/1610612749/primary/L/logo.svg",
     },
     {
       team: "Detroit Pistons",
-      logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7c/Pistons_logo17.svg/1200px-Pistons_logo17.svg.png",
+      logo: "https://cdn.nba.com/logos/nba/1610612765/primary/L/logo.svg",
     },
     {
       team: "LA Clippers",
-      logo: "https://cdn.shopify.com/s/files/1/1949/1233/products/la-clippers.jpg?v=1575428341",
+      logo: "https://cdn.nba.com/logos/nba/1610612746/primary/L/logo.svg",
     },
     {
       team: "Charlotte Hornets",
-      logo: "https://upload.wikimedia.org/wikipedia/en/thumb/c/c4/Charlotte_Hornets_%282014%29.svg/800px-Charlotte_Hornets_%282014%29.svg.png",
+      logo: "https://cdn.nba.com/logos/nba/1610612766/primary/L/logo.svg",
     }
   ];
 
@@ -108,27 +108,27 @@ function TodaysGameCard({ game }) {
 
   return (
     <>
-    <div className="game-container">
+
 
       <div className="each-game">
         <div className="away-home">
-            <img alt="logo" className="team-logos-games" src={away_logo[0].logo} />
-          <h4>
+          <h4 className="team-names">
             {game.awayTeam.teamCity} {game.awayTeam.teamName}{" "}
           </h4>
-              <p>{game.awayTeam.wins} - {game.awayTeam.losses}</p>
+            <img alt="logo" className="team-logos-games" src={away_logo[0].logo} />
+              <p className="team-record">{game.awayTeam.wins} - {game.awayTeam.losses}</p>
         </div>
-        <p className="at-sign">@</p>
+        {/* <p className="at-sign">@</p> */}
+        <p className="time-of-game">{game.gameStatusText.replace('ET', '')}</p>
         <div className="away-home">
-            <img alt="logo" className="team-logos-games" src={home_logo[0].logo} />
-          <h4>
+          <h4 className="team-names">
             {game.homeTeam.teamCity} {game.homeTeam.teamName}{" "}
           </h4>
-              <p>{game.homeTeam.wins} - {game.homeTeam.losses}</p>
+            <img alt="logo" className="team-logos-games" src={home_logo[0].logo} />
+              <p className="team-record">{game.homeTeam.wins} - {game.homeTeam.losses}</p>
         </div>
       </div>
-        <p>{game.gameStatusText}</p>
-    </div>
+
     </>
   );
 }
