@@ -6,7 +6,6 @@ function HomeCard({info}) {
   const [clicked, setClicked] = useState(true)
 
   function handleReadMoreClick(){
-    console.log(info.description.replace(/<[^>]*>?/gm).length)
     setClicked(prev => !prev)
   }
   return (
