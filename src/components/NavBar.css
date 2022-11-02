@@ -27,20 +27,27 @@
   font-weight: bold;
   padding-top: 0.56rem;
   padding-bottom: 0.4rem;
+  margin: 0;
   
 }
 .nbaReport {
   background-color: rgba(203, 53, 15, 0.2);  
-  border-radius: 50%;
+  /* border-radius: 50%; */
   padding-top: 1.1rem;
   padding-top: 0.5em;
   padding-bottom: 0.4rem;
   box-shadow: 1px 3px 25px rgba(203, 53, 15, 0.3);
   border: none;
+  padding: 1rem;
+  cursor: pointer;
 } 
 
-.nbaReport img {
+.nbaReport{
   width: 3rem;
+}
+.justLinks {
+  display: flex;
+  align-items: center;
 }
 
 .allen {
