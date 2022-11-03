@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
 
 .newsContainer {
-  margin-top: 5em;
+  margin-top: 2em;
   display: flex;
   flex-direction: column;
   max-width: 57em;
@@ -63,7 +63,7 @@
 }
 
 .newsImg{
-  width: 24em;
+  width: 65%;
   margin: 1.5em auto;
 
 }
@@ -83,7 +83,7 @@
 .eachNews-h1 {
   font-size: 1.65em;
   line-height: 1.4em;
-  margin-left: 1rem;
+
 }
 
 .read-more {
@@ -111,7 +111,26 @@
       transition-duration: 0.1s;
   }
 
+
 .moving-images {
-  width: 35em;
-  margin: 1.5em auto;
+  all: initial;
+  object-fit: cover;
+  width: 75%;
+  margin-right: auto;
+  margin-left: auto;
+  height: 49vh;
+  border-radius: 5px;
+  box-shadow: 0px 2px 3px 3px #333;
+}
+
+@media only screen and (max-width: 600px) {
+
+  .newsImg {
+    width: 85%;
+  }
+
+  .moving-images {
+    width: 90%;
+    height: 35vh;
+  }
 }
