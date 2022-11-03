@@ -17,8 +17,8 @@
   display: block;
   overflow-x: auto;
   white-space: nowrap;
-  background-color: rgb(32,33,37);
-  color: rgb(189,193,197);
+  background-color: #DDDDDD;
+  /* color: rgb(189,193,197); */
   font-weight: bold;
   font-family: 'Quicksand', sans-serif;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.942);
@@ -26,15 +26,17 @@
 }
 
 .standingTd {
-  background-color: rgb(32,33,37);
+  /* background-color: rgb(32,33,37); */
   cursor: default;
+  /* color: black; */
 }
 .standingTh {
   width: 20em;
 }
 .standingTd, .standingTh {
-  border: 1px solid black;
-  padding: 0.2rem;
+  border: 1px solid rgb(132, 131, 131);
+  padding: 0.3rem;
+  font-size: 1rem;
 }
 .standingTh {
   cursor: pointer;
