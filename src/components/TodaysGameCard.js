@@ -94,6 +94,14 @@ function TodaysGameCard({ game }) {
     {
       team: "Charlotte Hornets",
       logo: "https://cdn.nba.com/logos/nba/1610612766/primary/L/logo.svg",
+    },
+    {
+      team: "Golden State Warriors",
+      logo: "https://cdn.nba.com/logos/nba/1610612744/primary/L/logo.svg",
+    },
+    {
+      team: "Oklahoma City Thunder",
+      logo: "https://cdn.nba.com/logos/nba/1610612760/primary/L/logo.svg",
     }
   ];
 

@@ -20,18 +20,18 @@ function SearchForPlayerCard({stats}) {
 
   return (
     <tr className='searchTr'>
-    <td onClick={() => handleClick()} style={clicked ? { backgroundColor: 'rgb(56,171,214)', color : 'black'} : {color: 'rgb(189,193,197)'}} className='searchTd' data-label="YEAR">{stat.playoffs ? `${stat.season} Playoffs` : stat.season}</td>
-    <td onClick={() => handleClick()} style={clicked ? { backgroundColor: 'rgb(56,171,214)', color : 'black'} : {color: 'rgb(189,193,197)'}} className='searchTd' data-label="TEAM">{teamName}</td>
-    <td onClick={() => handleClick()} style={clicked ? { backgroundColor: 'rgb(56,171,214)', color : 'black'} : {color: 'rgb(189,193,197)'}} className='searchTd' data-label="GP">{stat.gp}</td>
-    <td onClick={() => handleClick()} style={clicked ? { backgroundColor: 'rgb(56,171,214)', color : 'black'} : {color: 'rgb(189,193,197)'}} className='searchTd' data-label="PTS">{(stat.pts / stat.gp).toFixed(1)}</td>
-    <td onClick={() => handleClick()} style={clicked ? { backgroundColor: 'rgb(56,171,214)', color : 'black'} : {color: 'rgb(189,193,197)'}} className='searchTd' data-label="REB">{((stat.orb + stat.drb) / stat.gp).toFixed(1)}</td>
-    <td onClick={() => handleClick()} style={clicked ? { backgroundColor: 'rgb(56,171,214)', color : 'black'} : {color: 'rgb(189,193,197)'}} className='searchTd' data-label="AST">{(stat.ast / stat.gp).toFixed(1)}</td>
-    <td onClick={() => handleClick()} style={clicked ? { backgroundColor: 'rgb(56,171,214)', color : 'black'} : {color: 'rgb(189,193,197)'}} className='searchTd' data-label="FG%">{((stat.fg / stat.fga) * 100).toFixed(1)}%</td>
-    <td onClick={() => handleClick()} style={clicked ? { backgroundColor: 'rgb(56,171,214)', color : 'black'} : {color: 'rgb(189,193,197)'}} className='searchTd' data-label="3P%">{((stat.tp / stat.tpa) * 100).toFixed(1)}%</td>
-    <td onClick={() => handleClick()} style={clicked ? { backgroundColor: 'rgb(56,171,214)', color : 'black'} : {color: 'rgb(189,193,197)'}} className='searchTd' data-label="3PM">{(stat.tp / stat.gp).toFixed(1)}</td>
-    <td onClick={() => handleClick()} style={clicked ? { backgroundColor: 'rgb(56,171,214)', color : 'black'} : {color: 'rgb(189,193,197)'}} className='searchTd' data-label="STL">{(stat.stl / stat.gp).toFixed(1)}</td>
-    <td onClick={() => handleClick()} style={clicked ? { backgroundColor: 'rgb(56,171,214)', color : 'black'} : {color: 'rgb(189,193,197)'}} className='searchTd' data-label="BLK">{(stat.blk /  stat.gp).toFixed(1)}</td>
-    <td onClick={() => handleClick()} style={clicked ? { backgroundColor: 'rgb(56,171,214)', color : 'black'} : {color: 'rgb(189,193,197)'}} className='searchTd' data-label="TOV">{(stat.tov / stat.gp).toFixed(1)}</td>
+    <td onClick={() => handleClick()} style={clicked ? { backgroundColor: '#FFFF00', color : 'black'} : {color: 'rgb(189,193,197)'}} className='searchTd' data-label="YEAR">{stat.playoffs ? `${stat.season} Playoffs` : stat.season}</td>
+    <td onClick={() => handleClick()} style={clicked ? { backgroundColor: '#FFFF00', color : 'black'} : {color: 'rgb(189,193,197)'}} className='searchTd' data-label="TEAM">{teamName}</td>
+    <td onClick={() => handleClick()} style={clicked ? { backgroundColor: '#FFFF00', color : 'black'} : {color: 'rgb(189,193,197)'}} className='searchTd' data-label="GP">{stat.gp}</td>
+    <td onClick={() => handleClick()} style={clicked ? { backgroundColor: '#FFFF00', color : 'black'} : {color: 'rgb(189,193,197)'}} className='searchTd' data-label="PTS">{(stat.pts / stat.gp).toFixed(1)}</td>
+    <td onClick={() => handleClick()} style={clicked ? { backgroundColor: '#FFFF00', color : 'black'} : {color: 'rgb(189,193,197)'}} className='searchTd' data-label="REB">{((stat.orb + stat.drb) / stat.gp).toFixed(1)}</td>
+    <td onClick={() => handleClick()} style={clicked ? { backgroundColor: '#FFFF00', color : 'black'} : {color: 'rgb(189,193,197)'}} className='searchTd' data-label="AST">{(stat.ast / stat.gp).toFixed(1)}</td>
+    <td onClick={() => handleClick()} style={clicked ? { backgroundColor: '#FFFF00', color : 'black'} : {color: 'rgb(189,193,197)'}} className='searchTd' data-label="FG%">{((stat.fg / stat.fga) * 100).toFixed(1)}%</td>
+    <td onClick={() => handleClick()} style={clicked ? { backgroundColor: '#FFFF00', color : 'black'} : {color: 'rgb(189,193,197)'}} className='searchTd' data-label="3P%">{((stat.tp / stat.tpa) * 100).toFixed(1)}%</td>
+    <td onClick={() => handleClick()} style={clicked ? { backgroundColor: '#FFFF00', color : 'black'} : {color: 'rgb(189,193,197)'}} className='searchTd' data-label="3PM">{(stat.tp / stat.gp).toFixed(1)}</td>
+    <td onClick={() => handleClick()} style={clicked ? { backgroundColor: '#FFFF00', color : 'black'} : {color: 'rgb(189,193,197)'}} className='searchTd' data-label="STL">{(stat.stl / stat.gp).toFixed(1)}</td>
+    <td onClick={() => handleClick()} style={clicked ? { backgroundColor: '#FFFF00', color : 'black'} : {color: 'rgb(189,193,197)'}} className='searchTd' data-label="BLK">{(stat.blk /  stat.gp).toFixed(1)}</td>
+    <td onClick={() => handleClick()} style={clicked ? { backgroundColor: '#FFFF00', color : 'black'} : {color: 'rgb(189,193,197)'}} className='searchTd' data-label="TOV">{(stat.tov / stat.gp).toFixed(1)}</td>
   </tr>
   
   )
