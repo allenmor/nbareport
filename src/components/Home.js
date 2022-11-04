@@ -22,7 +22,7 @@ function Home() {
     }).done(function (response) {
       // if(response.status !== 'ok'){ throw response.message; }
       setNewNews(response.items)
-      console.log(response)
+
 
     // console.log(data)
     // console.log('====== ' + response.feed.title + ' ======');
