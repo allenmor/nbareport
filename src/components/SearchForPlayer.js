@@ -52,7 +52,7 @@ function SearchForPlayer({ players, teams }) {
           }
         : "no";
     });
-    console.log(updatedStats);
+
     //GET PLAYER OBJECT THAT IS TYPED IN THE SEARCH
     let player = updatedStats.filter((el, i) => {
       return el.name.toLowerCase() === term.toLowerCase().trim();
