@@ -10,6 +10,7 @@ function Home() {
     fetch('https://raw.githubusercontent.com/allenmor/nbareport/main/news.json')
     .then(res => res.json())
     .then(data => {
+      console.log(data)
       let info = data.rss.channel.item
       let newInfo = info.filter((el, i) => {
         return el.thumbnail
