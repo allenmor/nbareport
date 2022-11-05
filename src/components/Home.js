@@ -9,10 +9,11 @@ function Home() {
   const [newNews, setNewNews] = useState([])
   const [espn, setEspn] = useState([])
 
+
+  // AJAX 
   useEffect(()=>{
   
     
-      // AJAX 
       $.ajax({
         url: 'https://api.rss2json.com/v1/api.json',
         method: 'GET',
@@ -34,9 +35,9 @@ function Home() {
 
     });
     
-    // AJAX 
   },[])
-  // console.log(newNews)
+  // AJAX 
+
     
         // AJAX ESPN
   useEffect(()=>{
@@ -51,28 +52,37 @@ function Home() {
   }).done(function (response) {
     if(response.status !== 'ok'){ throw response.message; }
     // setNewNews(response.items)
-    console.log(response.items[0])
+
     setEspn(response.items)
 
   
   
   });
   },[])
-
-    
     // AJAX 
 
 
+    // MOVING IMAGES ARRAY 
+    let images = ['https://s.yimg.com/ny/api/res/1.2/FIN2wKGSW9I3I5rAlPm4Pg--/YXBwaWQ9aGlnaGxhbmRlcjt3PTY0MDtoPTQyNw--/https://s.yimg.com/os/creatr-uploaded-images/2022-11/16134050-5b38-11ed-bd37-25f76a4867cf', 'https://sports.inquirer.net/files/2022/11/tyler-herro-nba-miami-heat-copy.jpg', 'https://cdn.vox-cdn.com/thumbor/gEDsLFFlGNZTMyNews-Y2UJ6gAM=/0x0:2734x4108/1820x1213/filters:focal(1153x832:1589x1268):format(webp)/cdn.vox-cdn.com/uploads/chorus_image/image/71577896/1244442150.0.jpg', 'https://cdn.vox-cdn.com/thumbor/IrXolGcwLN_HdUxgDEXr3scXkno=/0x0:2500x1675/1200x800/filters:focal(1050x638:1450x1038)/cdn.vox-cdn.com/uploads/chorus_image/image/71579238/usa_today_19348635.0.jpg',  ]
 
+      for(let i = 0; i < newNews.length; i++) {
+        images.push(newNews[i].thumbnail)
+      }
+      for(let i = 0; i < espn.length; i++) {
+        images.push(espn[i].enclosure.link)
+      }
+      function shuffle(a) {
+        for (let i = a.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [a[i], a[j]] = [a[j], a[i]];
+        }
+        return a;
+    }
+    shuffle(images)
 
-
-
-
-  let images = ['https://s.yimg.com/ny/api/res/1.2/FIN2wKGSW9I3I5rAlPm4Pg--/YXBwaWQ9aGlnaGxhbmRlcjt3PTY0MDtoPTQyNw--/https://s.yimg.com/os/creatr-uploaded-images/2022-11/16134050-5b38-11ed-bd37-25f76a4867cf', 'https://sports.inquirer.net/files/2022/11/tyler-herro-nba-miami-heat-copy.jpg', 'https://cdn.vox-cdn.com/thumbor/gEDsLFFlGNZTMyNews-Y2UJ6gAM=/0x0:2734x4108/1820x1213/filters:focal(1153x832:1589x1268):format(webp)/cdn.vox-cdn.com/uploads/chorus_image/image/71577896/1244442150.0.jpg', 'https://cdn.vox-cdn.com/thumbor/IrXolGcwLN_HdUxgDEXr3scXkno=/0x0:2500x1675/1200x800/filters:focal(1050x638:1450x1038)/cdn.vox-cdn.com/uploads/chorus_image/image/71579238/usa_today_19348635.0.jpg',  ]
+    // MOVING IMAGES ARRAY 
 
   // CHANGE IMAGES 
-
-
   const [currentIndex, setCurrentIndex] = useState(0);
 
   useEffect(() => {
