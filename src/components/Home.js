@@ -116,11 +116,11 @@ function Home() {
       {/* {news.map((el, i) => {
         return <HomeCard info={el} key={i} />
       })} */}
+          {newNews.map((el, i) => {
+            return <HomeCard info={el} key={i} />
+          })}
         {espn.map((el, i) => {
           return <ESPNCard info={el} key={i} />
-        })}
-        {newNews.map((el, i) => {
-          return <HomeCard info={el} key={i} />
         })}
       {slam.map((el, i) => {
         return <SLAMCard info={el} key={i} />
