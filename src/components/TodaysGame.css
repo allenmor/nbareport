@@ -47,6 +47,8 @@ width: 10rem;
 
 .date {
     text-align: center;
+    margin: 0;
+    margin-bottom: 1rem;
     /* border-bottom: 1px solid rgb(106, 6, 221); */
 }
 

@@ -32,8 +32,11 @@ function Home() {
   },[])
   // SLAM
 
-  // AJAX 
+  let today = String(new Date())
 
+  // let date = today. getFullYear()+'-'+(today. getMonth()+1)+'-'+today. getDate();
+  
+//AJAX
   // REAL GM 
   useEffect(()=>{
       $.ajax({
