@@ -126,7 +126,6 @@ function TodaysGameCard({ game }) {
             <img alt="logo" className="team-logos-games" src={game.awayTeam.teamLogo} />
               <p className="team-record">{game.awayTeam.wins} - {game.awayTeam.losses}</p>
         </div>
-
         <p className="time-of-game">{game.gameStatusText.replace('ET', '')}</p>
         <div className="away-home">
           <h4 className="team-names">
