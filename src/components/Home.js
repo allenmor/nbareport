@@ -122,9 +122,12 @@ function Home() {
         {espn.map((el, i) => {
           return <ESPNCard info={el} key={i} />
         })}
-      {slam.map((el, i) => {
-        return <SLAMCard info={el} key={i} />
-      })}
+        {slam.map((el, i) => {
+          return <SLAMCard info={el} key={i} />
+           })}
+
+
+
     </div>
   );
 }

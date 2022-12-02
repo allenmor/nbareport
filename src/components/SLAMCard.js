@@ -35,6 +35,10 @@ function SLAMCard({info}) {
     let d = []
     let b = info.description.split('')
     for(let i = 0; i < b.length; i++) { 
+      if(b[i] === 'T' && b[i + 1] === 'h' && b[i + 2] === 'e' && b[i + 3] == ' ' && b[i + 4] == 'p' && b[i + 5] == 'o' && b[i + 6] == 's' && b[i + 7] == 't') {
+
+        break
+      }
 
         if(b[i] === '[' || b[i] == ']') {
             b[i] = ''
