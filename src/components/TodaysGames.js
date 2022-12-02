@@ -31,7 +31,7 @@ function TodaysGames() {
 
   return (
     <div className='todays-games-div'>
-        <h1 className='date'>{games[0].gameDate}</h1>
+        {/* <h1 className='date'>{games[0].gameDate}</h1> */}
         {games[0].games.map((el, i) => {
             return <TodaysGameCard game={el} key={i}/>
         })}
