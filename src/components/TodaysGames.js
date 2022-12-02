@@ -20,19 +20,20 @@ function TodaysGames() {
       };
       
       axios.request(options).then(function (response) {
-        console.log(response.data)
+
         // setGames(response.data[0]) 
-        setGames(response.data)
+        setGames(response.data[0].games)
       }).catch(function (error) {
         console.error(error);
       });
     },[])
-    // console.log(games)
+    console.log(games)
+
 
   return (
     <div className='todays-games-div'>
         {/* <h1 className='date'>{games[0].gameDate}</h1> */}
-        {games[0].games.map((el, i) => {
+        {games.map((el, i) => {
             return <TodaysGameCard game={el} key={i}/>
         })}
     </div>
