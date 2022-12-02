@@ -39,10 +39,11 @@ function TodaysGames() {
       }
     }
 
-    //TODAYS DATE
-    // AJAX 
-  
     let date = dateArr.join('')
+    //TODAYS DATE
+
+    console.log(games)
+  
 
   return (
     <div className='todays-games-div'>
