@@ -13,7 +13,7 @@ import TodaysGames from "./components/TodaysGames";
 function App() {
   const [teams, setTeams] = useState([]);
   const [players, setPlayers] = useState([]);
-
+  const [gamesClickedState, setGamesClickedState] = useState(false)
   //FETCH GET INFO
   useEffect(() => {
     fetch("https://raw.githubusercontent.com/allenmor/nbareport/main/db.json")
@@ -23,9 +23,12 @@ function App() {
         setPlayers(data.data[0].players);
       });
   }, []);
+  function gamesClicked(clicked) {
+      setGamesClickedState(clicked)
+  }
   return (
     <>
-      <NavBar></NavBar>
+      <NavBar gamesClicked={gamesClicked}></NavBar>
       <Routes>
         <Route path="/" element={<FrontPage />} />
         <Route path="/standings" element={<StandingsContainer />} />
@@ -35,7 +38,7 @@ function App() {
           element={<SearchForPlayer teams={teams} players={players} />}
         />
         <Route path="/news" element={<TopTenContainer />} />
-        <Route path="/todaysgames" element={<TodaysGames />} />
+        <Route path="/todaysgames" element={<TodaysGames gamesClickedState={gamesClickedState} />} />
       </Routes>
     </>
   );

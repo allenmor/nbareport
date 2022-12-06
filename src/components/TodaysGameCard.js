@@ -1,17 +1,24 @@
 import React from "react";
 import './TodaysGame.css'
 
-function TodaysGameCard({ game }) {
 
 
+
+function TodaysGameCard({ game, teamClicked }) {
+
+
+
+
+  function handleAwayClick() {
+    teamClicked(true, game.awayTeam.teamTricode, `${game.awayTeam.teamCity} ${game.awayTeam.teamName}`)
+
+  }
 
 
   return (
     <>
-
-
       <div className="each-game">
-        <div className="away-home">
+        <div onClick={handleAwayClick} className="away-home">
           <h4 className="team-names">
             {game.awayTeam.teamCity} {game.awayTeam.teamName}{" "}
           </h4>
@@ -29,7 +36,6 @@ function TodaysGameCard({ game }) {
               <p className="team-record">{game.homeTeam.wins} - {game.homeTeam.losses}</p>
         </div>
       </div>
-
     </>
   );
 }
