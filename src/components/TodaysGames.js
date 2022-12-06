@@ -8,15 +8,18 @@ function TodaysGames() {
 
     const [games, setGames] = useState([])
 
+    //TODAYS DATE FOR FETCH
     let todays = new Date()
-    let todayDate = todays.getFullYear()+'-'+(todays.getMonth()+1)+'-'+todays.getDate();
-
-    console.log(todayDate);
+    let month = todays.getMonth() + 1;
+    let day = '0' + todays. getDate();
+    let year = todays. getFullYear();
+    let fullTodays = `${day}-${month}-${year}`
+    //TODAYS DATE FOR FETCH
     useEffect(()=>{
       const options = {
         method: 'GET',
         url: 'https://nba-schedule.p.rapidapi.com/schedule', 
-        params: {date: '06-12-2022'},
+        params: {date: `${fullTodays}`},
         headers: {
           'X-RapidAPI-Key': '8cfd1121c5msh914ca13681907a5p1497f6jsn500f6dda8582',
           'X-RapidAPI-Host': 'nba-schedule.p.rapidapi.com'
@@ -46,7 +49,7 @@ function TodaysGames() {
     let date = dateArr.join('')
     //TODAYS DATE
 
-    console.log(games)
+
   
 
   return (
