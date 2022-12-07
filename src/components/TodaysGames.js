@@ -72,11 +72,13 @@ function TodaysGames({gamesClickedState}) {
       }
     };
     axios.request(options).then(function (response) {
-      setTeamsGames(response.data)
+      setTeamsGames(response.data.filter((el, i) => {
+        return el.games[0].homeTeam.score !== 0
+      }).reverse())
     }).catch(function (error) {
       console.error(error);
     });
-    console.log(teamsGames);
+
   }
 
   useEffect(()=>{
