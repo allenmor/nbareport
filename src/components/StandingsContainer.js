@@ -48,10 +48,11 @@ function StandingsContainer() {
             }
             
             arr.map((el, i) => {
-              return el.win = +el.Overall.slice(0, 1)
+              return el.win = +el.Overall.slice(0,2) ? el.win = +el.Overall.slice(0,2) : el.win = +el.Overall.slice(0,1)
+
             })
             arr.map((el, i) => {
-              return el.loss = +el.Overall.slice(2, 4)
+              return el.loss = +el.Overall.slice(3, 5)
             })
             arr.map((el, i) => {
               return el.homeW = +el.Home.slice(0, 2)
