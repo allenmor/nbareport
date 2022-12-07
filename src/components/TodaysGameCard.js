@@ -35,9 +35,9 @@ function TodaysGameCard({ game, teamClicked }) {
         <div className="gameInfoContainer">
         <p className="gameDate">{gameDate}</p>
         <div>
-        <p className="gameScore">{game.awayTeam.score}</p>
+        <p className="gameScore">{game.awayTeam.score === 0 && game.homeTeam.score === 0 ? '' : game.awayTeam.score}</p>
         <p className="time-of-game">{game.gameStatusText.replace('ET', '')}</p>
-        <p className="gameScore">{game.homeTeam.score}</p>
+        <p className="gameScore">{game.awayTeam.score === 0 && game.homeTeam.score === 0 ? '' : game.homeTeam.score}</p>
         </div>
         </div>
         <div onClick={handleHomeClick} className="away-home">
