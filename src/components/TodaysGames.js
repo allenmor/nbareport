@@ -16,6 +16,7 @@ function TodaysGames({gamesClickedState}) {
   const [yesterdaysClicked, setYesterdaysClicked] = useState(false)
   const [ifYesterdayClicked, setIfYesterdayClicked] = useState(true)
 
+
   //TODAYS DATE FOR FETCH
   let todays = new Date();
   let month = todays.getMonth() + 1;
@@ -76,17 +77,16 @@ function TodaysGames({gamesClickedState}) {
       }
     };
     axios.request(options).then(function (response) {
-      // console.log(response.data);
       setTeamsGames(response.data.filter((el, i) => {
         return el.games[0].homeTeam.score !== 0
       }).reverse())
       setUpcomingGames(response.data.filter((el, i) => {
         return el.games[0].homeTeam.score === 0
-      }).reverse())
+      }))
     }).catch(function (error) {
       console.error(error);
     });
-
+    setUpcomingClicked(false)
   }
 
   useEffect(()=>{
@@ -97,24 +97,25 @@ function TodaysGames({gamesClickedState}) {
     setUpcomingClicked(prev => !prev)
   }
 
-
-  const yesterday = new Date(today)
-  yesterday.setDate(yesterday.getDate() - 1)
-  let changeUpYesterdayDate = yesterday.toString().split("");
-  let yesterdayDateArr = [];
-  for (let i = 0; i < changeUpYesterdayDate.length; i++) {
-    yesterdayDateArr.push(changeUpYesterdayDate[i]);
-    if (
-      changeUpYesterdayDate[i] === "2" &&
-      changeUpYesterdayDate[i - 1] === "2" &&
-      changeUpYesterdayDate[i - 2] === "0" &&
-      changeUpYesterdayDate[i - 3] === "2"
-    ) {
-      break;
+  
+  // GET YESTERDAYS GAMES AFTER CLICK
+  
+    const yesterday = new Date(today)
+    yesterday.setDate(yesterday.getDate() - 1)
+    let changeUpYesterdayDate = yesterday.toString().split("");
+    let yesterdayDateArr = [];
+    for (let i = 0; i < changeUpYesterdayDate.length; i++) {
+      yesterdayDateArr.push(changeUpYesterdayDate[i]);
+      if (
+        changeUpYesterdayDate[i] === "2" &&
+        changeUpYesterdayDate[i - 1] === "2" &&
+        changeUpYesterdayDate[i - 2] === "0" &&
+        changeUpYesterdayDate[i - 3] === "2"
+      ) {
+        break;
+      }
     }
-  }
-  let yesterdays = yesterdayDateArr.join('')
-
+    let yesterdays = yesterdayDateArr.join('')
   function handleYesterdaysClick() {
     setYesterdaysClicked(prev => !prev)
     if(ifYesterdayClicked) {
@@ -190,6 +191,7 @@ function TodaysGames({gamesClickedState}) {
     }
     setIfYesterdayClicked(false)
   }
+  // GET YESTERDAYS GAMES AFTER CLICK
 
 
   return (
@@ -198,12 +200,15 @@ function TodaysGames({gamesClickedState}) {
       {clicked ? (
                 <div className="todays-games-div">
                 <h1 className="date">{teamLastTenName}</h1>
-                {/* <h1 className="date">Recent Games</h1> */}
-          <button className="button-54" onClick={handleUpcomingGamesClick} role="button">Upcoming Games</button>
-                {teamsGames.map((el, i) => {
+                {upcomingClicked ? <button className="button-54" onClick={handleUpcomingGamesClick} role="button">Click for recent games</button> : <button className="button-54" onClick={handleUpcomingGamesClick} role="button">Click for upcoming games</button>}
+                {!upcomingClicked ? teamsGames.map((el, i) => {
                   return (
                     <TodaysGameCard teamClicked={teamClicked} game={el.games[0]} key={i} />
                   );
+                }) : upcomingGames.map((el, i) => {
+                  return (
+                    <TodaysGameCard teamClicked={teamClicked} game={el.games[0]} key={i} />
+                  ); 
                 })}
               </div>
       ) : (
