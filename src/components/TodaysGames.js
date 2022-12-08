@@ -10,6 +10,11 @@ function TodaysGames({gamesClickedState}) {
   const [clicked, setClicked] = useState(false);
   const [teamLastTenName, setTeamLastTenName] = useState('')
   const [teamsGames, setTeamsGames] = useState([])
+  const [yesterdaysGames, setYesterdaysGames] = useState([])
+  const [upcomingGames, setUpcomingGames] = useState([])
+  const [upcomingClicked, setUpcomingClicked] = useState(false)
+  const [yesterdaysClicked, setYesterdaysClicked] = useState(false)
+  const [ifYesterdayClicked, setIfYesterdayClicked] = useState(true)
 
   //TODAYS DATE FOR FETCH
   let todays = new Date();
@@ -28,7 +33,6 @@ function TodaysGames({gamesClickedState}) {
         "X-RapidAPI-Host": "nba-schedule.p.rapidapi.com",
       },
     };
-
     axios
       .request(options)
       .then(function (response) {
@@ -72,8 +76,12 @@ function TodaysGames({gamesClickedState}) {
       }
     };
     axios.request(options).then(function (response) {
+      // console.log(response.data);
       setTeamsGames(response.data.filter((el, i) => {
         return el.games[0].homeTeam.score !== 0
+      }).reverse())
+      setUpcomingGames(response.data.filter((el, i) => {
+        return el.games[0].homeTeam.score === 0
       }).reverse())
     }).catch(function (error) {
       console.error(error);
@@ -85,13 +93,114 @@ function TodaysGames({gamesClickedState}) {
     setClicked(false)
   },[gamesClickedState === true])
 
+  function handleUpcomingGamesClick() {
+    setUpcomingClicked(prev => !prev)
+  }
+
+
+  const yesterday = new Date(today)
+  yesterday.setDate(yesterday.getDate() - 1)
+  let changeUpYesterdayDate = yesterday.toString().split("");
+  let yesterdayDateArr = [];
+  for (let i = 0; i < changeUpYesterdayDate.length; i++) {
+    yesterdayDateArr.push(changeUpYesterdayDate[i]);
+    if (
+      changeUpYesterdayDate[i] === "2" &&
+      changeUpYesterdayDate[i - 1] === "2" &&
+      changeUpYesterdayDate[i - 2] === "0" &&
+      changeUpYesterdayDate[i - 3] === "2"
+    ) {
+      break;
+    }
+  }
+  let yesterdays = yesterdayDateArr.join('')
+
+  function handleYesterdaysClick() {
+    setYesterdaysClicked(prev => !prev)
+    if(ifYesterdayClicked) {
+
+      let yesterdayFetch = []
+      yesterdayFetch.push(yesterdayDateArr[8], yesterdayDateArr[9], '-')
+      for(let i = 0; i < yesterdayDateArr.length; i ++) {
+        // if(yesterdayDateArr[i] + yesterdayDateArr[i + 1] + yesterdayDateArr[i + 2] === 'Dec'){
+        //   yesterdayFetch.push('12-')
+        // }
+        switch(yesterdayDateArr[i] + yesterdayDateArr[i + 1] + yesterdayDateArr[i + 2]) {
+          case 'Jan':
+           yesterdayFetch.push('01-')
+            break;
+          case 'Feb':
+            yesterdayFetch.push('02-')
+            break;
+          case 'Mar':
+            yesterdayFetch.push('03-')
+            break;
+          case 'Apr':
+            yesterdayFetch.push('04-')
+            break;
+          case 'May':
+            yesterdayFetch.push('05-')
+            break;
+          case 'Jun':
+            yesterdayFetch.push('06-')
+            break;
+          case 'Jul':
+            yesterdayFetch.push('07-')
+            break;
+          case 'Aug':
+            yesterdayFetch.push('08-')
+            break;
+          case 'Sep':
+            yesterdayFetch.push('09-')
+            break;
+          case 'Oct':
+            yesterdayFetch.push('10-')
+            break;
+          case 'Nov':
+            yesterdayFetch.push('11-')
+            break;
+          case 'Dec':
+            yesterdayFetch.push('12-')
+            break;
+          default:
+            // code block
+        }
+  
+      }
+      yesterdayFetch.push(yesterdayDateArr[11], yesterdayDateArr[12], yesterdayDateArr[13], yesterdayDateArr[14])
+      let a = yesterdayFetch.join('')
+      const options = {
+        method: "GET",
+        url: "https://nba-schedule.p.rapidapi.com/schedule",
+        params: { date: `${a}` },
+        headers: {
+          "X-RapidAPI-Key": "8cfd1121c5msh914ca13681907a5p1497f6jsn500f6dda8582",
+          "X-RapidAPI-Host": "nba-schedule.p.rapidapi.com",
+        },
+      };
+  
+      axios
+        .request(options)
+        .then(function (response) {
+          console.log(response.data[0].games);
+          setYesterdaysGames(response.data[0].games)
+        })
+        .catch(function (error) {
+          console.error(error);
+        });
+    }
+    setIfYesterdayClicked(false)
+  }
+
 
   return (
     <>
+
       {clicked ? (
                 <div className="todays-games-div">
                 <h1 className="date">{teamLastTenName}</h1>
                 <h1 className="date">Recent Games</h1>
+          {/* <button onClick={handleUpcomingGamesClick}>upcomingGames</button> */}
                 {teamsGames.map((el, i) => {
                   return (
                     <TodaysGameCard teamClicked={teamClicked} game={el.games[0]} key={i} />
@@ -107,6 +216,13 @@ function TodaysGames({gamesClickedState}) {
               <TodaysGameCard teamClicked={teamClicked} game={el} key={i} />
             );
           })}
+          <button className="button-54" onClick={handleYesterdaysClick} role="button">Yesterdays Games</button>
+          <h1 className="date">{yesterdays}</h1>
+          {yesterdaysClicked ? yesterdaysGames.map((el, i) => {
+            return (
+              <TodaysGameCard teamClicked={teamClicked} game={el} key={i} />
+            );
+          }): ''}
         </div>
       )}
     </>
