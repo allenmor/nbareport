@@ -182,7 +182,6 @@ function TodaysGames({gamesClickedState}) {
       axios
         .request(options)
         .then(function (response) {
-          console.log(response.data[0].games);
           setYesterdaysGames(response.data[0].games)
         })
         .catch(function (error) {
@@ -199,8 +198,8 @@ function TodaysGames({gamesClickedState}) {
       {clicked ? (
                 <div className="todays-games-div">
                 <h1 className="date">{teamLastTenName}</h1>
-                <h1 className="date">Recent Games</h1>
-          {/* <button onClick={handleUpcomingGamesClick}>upcomingGames</button> */}
+                {/* <h1 className="date">Recent Games</h1> */}
+          <button className="button-54" onClick={handleUpcomingGamesClick} role="button">Upcoming Games</button>
                 {teamsGames.map((el, i) => {
                   return (
                     <TodaysGameCard teamClicked={teamClicked} game={el.games[0]} key={i} />
