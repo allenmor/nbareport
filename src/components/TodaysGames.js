@@ -238,7 +238,7 @@ function TodaysGames({ gamesClickedState }) {
                 onClick={handleUpcomingGamesClick}
                 role="button"
               >
-                Click for recent games
+                Recent games
               </button>
             </>
           ) : (
@@ -255,7 +255,7 @@ function TodaysGames({ gamesClickedState }) {
                 onClick={handleUpcomingGamesClick}
                 role="button"
               >
-                Click for upcoming games
+                Upcoming games
               </button>
             </>
           )}
