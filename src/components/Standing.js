@@ -5,8 +5,13 @@ import { useState } from 'react'
 function Standing({team}) {
   const [clicked, setClicked] = useState(false)
 
+
   function handleClick(){
     setClicked(prev => !prev)
+  }
+
+  function handleTeamClicked() {
+    console.log('clicked')
   }
 
   return (

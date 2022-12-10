@@ -1,21 +1,11 @@
 import React from "react";
 import './TodaysGame.css'
-// import { useRef } from "react";
-import { useEffect } from "react";
 
 
 
 
-function TodaysGameCard({ game, teamClicked }) {
 
-
-// console.log(game);
-
-//  const myRef = useRef(null)
-
-
-//   const executeScroll = () => myRef.current.scrollIntoView() 
-
+function TodaysGameCard({ game, teamClicked}) {
 
   function handleAwayClick() {
     teamClicked(true, game.awayTeam.teamTricode, `${game.awayTeam.teamCity} ${game.awayTeam.teamName}`)
@@ -24,17 +14,11 @@ function TodaysGameCard({ game, teamClicked }) {
 
   function handleHomeClick() {
     teamClicked(true, game.homeTeam.teamTricode, `${game.homeTeam.teamCity} ${game.homeTeam.teamName}`)
-    // executeScroll()
+
   }
 
   let gameDate = `${game.gameDateEst[5]}${game.gameDateEst[6]}/${game.gameDateEst[8]}${game.gameDateEst[9]}/${game.gameDateEst[0]}${game.gameDateEst[1]}${game.gameDateEst[2]}${game.gameDateEst[3]}`
 
-  // useEffect(()=>{
-  
-  //   if(gameDate === '12/07/2022') {
-  //     executeScroll()
-  //   }
-  // },[])
 
   return (
     <>
