@@ -36,7 +36,7 @@ function Stats() {
 <>
       <h1 className="teamTitle-stats">Player Per Game Stats 2022 - 2023</h1>
       <div className="stat_tableDiv">
-      <table className="statsTable">
+      <table className="statsStatsTable">
         <caption>
         </caption>
         <thead className="statThead">

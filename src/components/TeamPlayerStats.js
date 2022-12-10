@@ -51,7 +51,7 @@ function TeamPlayerStats({teamAbr}) {
 
   return (
 <>
-      <h1 className="teamTitle-stats">Player Per Game Stats 2022 - 2023</h1>
+      <h1 className="teamTitle-stats player-title-stats">Player Per Game Stats 2022 - 2023</h1>
       <div className="stat_tableDiv playerStatDiv">
       <table className="statsTable">
         <caption>
