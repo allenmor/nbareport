@@ -23,7 +23,13 @@ function TodaysGames({ gamesClickedState }) {
   //TODAYS DATE FOR FETCH
   let todays = new Date();
   let month = todays.getMonth() + 1;
+
+
   let day = "0" + todays.getDate();
+  if(day.length === 3){
+    day = day.substring(1);
+  }
+
   let year = todays.getFullYear();
   let fullTodays = `${day}-${month}-${year}`;
   //TODAYS DATE FOR FETCH
@@ -40,6 +46,8 @@ function TodaysGames({ gamesClickedState }) {
     axios
       .request(options)
       .then(function (response) {
+        console.log(response.data);
+        console.log(fullTodays);
         // setGames(response.data[0])
         setGames(response.data[0].games);
       })
