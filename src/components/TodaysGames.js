@@ -16,7 +16,7 @@ function TodaysGames({ gamesClickedState }) {
   const [yesterdaysClicked, setYesterdaysClicked] = useState(false);
   const [ifYesterdayClicked, setIfYesterdayClicked] = useState(true);
   const [teamAbr, setTeamAbr] = useState('')
-  const [allPlayersOnTeam, setAllPlayersOnTeam] = useState([])
+
   const [playerStatsClicked, setPlayerStatsClicked] = useState(false)
 
 
@@ -46,9 +46,6 @@ function TodaysGames({ gamesClickedState }) {
     axios
       .request(options)
       .then(function (response) {
-        console.log(response.data);
-        console.log(fullTodays);
-        // setGames(response.data[0])
         setGames(response.data[0].games);
       })
       .catch(function (error) {
