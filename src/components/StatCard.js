@@ -3,7 +3,7 @@ import "./Stats.css";
 import { useState} from "react";
 
 function StatCard({player}) {
-  console.log(player);
+
 
   const [clicked, setClicked] = useState(false)
 
