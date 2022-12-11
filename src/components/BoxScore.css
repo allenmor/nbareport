@@ -1,0 +1,18 @@
+.boxscore-div{
+    display: flex;
+    justify-content: space-between;
+}
+
+.total-points-table-div{
+    width: 100%;
+    margin-top: 1rem;
+    border-top: 1px solid gray;
+}
+
+.total-points-tbody{
+
+}
+
+.total-points-tr{
+    text-align: center;
+}
