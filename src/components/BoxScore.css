@@ -39,4 +39,14 @@
     border-right: 1px solid black;
 }
 
-
+.both-team-stats-div {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+.home-away-logo-stats {
+    width: 5rem;
+}
+.middle-stats-div{
+    text-align: center;
+}

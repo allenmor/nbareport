@@ -87,7 +87,7 @@ function TodaysGameCard({ game, teamClicked}) {
               console.error(error);
             });
         
-            console.log('fetched');
+
     }
 
   }
@@ -137,7 +137,7 @@ function TodaysGameCard({ game, teamClicked}) {
         </div>
       </div>
       <div>
-        {boxClicked && <BoxScore homeName={`${game.homeTeam.teamCity} ${game.homeTeam.teamName}`} awayName={`${game.awayTeam.teamCity} ${game.awayTeam.teamName}`} boxScore={boxScore} away={awayTeamTri} home={homeTeamTri}/>}
+        {boxClicked && <BoxScore awayLogo={game.awayTeam.teamLogo} homeLogo={game.homeTeam.teamLogo} homeName={`${game.homeTeam.teamCity} ${game.homeTeam.teamName}`} awayName={`${game.awayTeam.teamCity} ${game.awayTeam.teamName}`} boxScore={boxScore} away={awayTeamTri} home={homeTeamTri}/>}
       </div>
     </div>
     </>
