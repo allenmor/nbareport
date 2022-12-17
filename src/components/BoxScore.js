@@ -186,6 +186,10 @@ function BoxScore({awayLogo, homeLogo, away, home, boxScore, homeName, awayName 
                     <p>{boxScore.teamStats[away].tptfgp}</p>
                     <p>{boxScore.teamStats[away].ftp}</p>
                     <p>{boxScore.teamStats[away].reb}</p>
+                    <p>{boxScore.teamStats[away].ast}</p>
+                    <p>{boxScore.teamStats[away].blk}</p>
+                    <p>{boxScore.teamStats[away].stl}</p>
+                    <p>{boxScore.teamStats[away].TOV}</p>
                 </div>
                 <div className="middle-stats-div">
                     <p>TEAM STATS</p>
@@ -193,6 +197,10 @@ function BoxScore({awayLogo, homeLogo, away, home, boxScore, homeName, awayName 
                     <p>3 Point %</p>
                     <p>Free Throw %</p>
                     <p>Total Rebounds</p>
+                    <p>Assists</p>
+                    <p>Blocks</p>
+                    <p>Steals</p>
+                    <p>Turnovers</p>
                 </div>
                 <div>
                     <img src={homeLogo} className="home-away-logo-stats"></img>
@@ -200,6 +208,10 @@ function BoxScore({awayLogo, homeLogo, away, home, boxScore, homeName, awayName 
                     <p>{boxScore.teamStats[home].tptfgp}</p>
                     <p>{boxScore.teamStats[home].ftp}</p>
                     <p>{boxScore.teamStats[home].reb}</p>
+                    <p>{boxScore.teamStats[home].ast}</p>
+                    <p>{boxScore.teamStats[home].blk}</p>
+                    <p>{boxScore.teamStats[home].stl}</p>
+                    <p>{boxScore.teamStats[home].TOV}</p>
                 </div>
               </div>
             )}
