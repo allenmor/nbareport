@@ -1,12 +1,12 @@
 .boxscore-div{
-    display: flex;
+
     justify-content: space-between;
+    border-top: 1px solid gray;
 }
 
 .total-points-table-div{
     width: 100%;
     margin-top: 1rem;
-    border-top: 1px solid gray;
 }
 
 .total-points-tbody{
@@ -16,3 +16,27 @@
 .total-points-tr{
     text-align: center;
 }
+
+.team-away-stats-btn-div{
+    text-align: center;
+}
+.team-away-stats-btn-div button{
+    width: 30%;
+}
+
+.team-boxscore-table{
+    display: block;
+    max-width: -moz-fit-content;
+    max-width: fit-content;
+    margin: 0 auto;
+    overflow-x: auto;
+    white-space: nowrap;
+
+
+}
+
+.player-name {
+    border-right: 1px solid black;
+}
+
+
