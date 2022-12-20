@@ -9,9 +9,10 @@ function Stats() {
   const [clicked, setClicked] = useState(false)
   //WHEN YOU CLICK ON POINTS SORTS ARRAY BY HIGHEST POINTS FIRSTxw
   useEffect(() => {
-    fetch(`https://raw.githubusercontent.com/allenmor/nbareport/main/currentStats.json`)
+    fetch(`https://nbaexpressbe.onrender.com/scrape`)
     .then(res => res.json())
     .then(data => {
+
       setPlayerStat(data)
     })
   },[])
