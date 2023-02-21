@@ -1,32 +1,34 @@
 import React from "react";
-import "./NavBar.css";
+import logo from '../images/ball3.png';
 import { useNavigate } from "react-router-dom";
-import { Link } from "react-router-dom";
 
-function NavBar({gamesClicked}) {
+function Navbar() {
 
-  const navigate = useNavigate()
-  function handleLogoClick(){
-    navigate('/')
-  }
+    const navigate = useNavigate()
 
-  function handleGamesClicked() {
-    gamesClicked(prev => !prev)
-  }
+    function handleStandingsClick() {
+        navigate('/standings')
+    }
+
+    function handleStatsClick() {
+        navigate('/stats')
+    }
+
+    function handleLogoClick() {
+        navigate('/')
+    }
   return (
-    <>
-    <div className="topNav" id="myTopnav">
-      <div className="justLinks">
-      <img alt="logo" onClick={handleLogoClick} className="nav-links nbaReport" src="https://cdn.nba.com/manage/2020/10/NBA20Secondary20Logo-784x462.jpg"/>
-      <Link className="nav-links" to="/standings">Standings</Link>
-      <Link className="nav-links" to="/stats">Stats</Link>
-      <Link className="nav-links"to="/searchforplayer">Search</Link>
-      <Link onClick={handleGamesClicked} className="nav-links"to="/todaysgames">Games</Link>
-      {/* <Link className="nav-links" to="/news">Leaders</Link> */}
+    <nav className="navbar">
+      <div className="logo">
+        <img onClick={handleLogoClick} className="logo-image" src={logo} alt='logo' />
       </div>
-    </div>
-    </>
+      <div className="navbar-menu">
+        <p onClick={handleStandingsClick} className="navbar-item">Standings</p>
+        <p onClick={handleStatsClick} className="navbar-item">Stats</p>
+        <p className="navbar-item">Games</p>
+      </div>
+    </nav>
   );
 }
 
-export default NavBar;
+export default Navbar;
