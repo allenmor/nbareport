@@ -7,7 +7,7 @@ function Stats() {
   const [sortOrders, setSortOrders] = useState([])
 
   useEffect(() => {
-    fetch('https://nbaexpressbe.onrender.com/')
+    fetch('https://raw.githubusercontent.com/allenmor/nbareport/main/stats.json')
       .then(response => response.json())
       .then(data => {
         console.log(data);
