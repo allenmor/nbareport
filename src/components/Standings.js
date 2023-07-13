@@ -6,7 +6,7 @@ function Standings() {
   const [clickedRows, setClickedRows] = useState({});
 
   useEffect(() => {
-    fetch("https://nbaexpressbe.onrender.com/standings")
+    fetch("https://raw.githubusercontent.com/allenmor/nbareport/main/standings.json")
       .then((res) => res.json())
       .then((data) => {
         setData(data);

@@ -16,6 +16,7 @@ function Navbar() {
 
     function handleLogoClick() {
         navigate('/')
+        
     }
   return (
     <nav className="navbar">
